@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #cacee0;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="kuaidi-f" class="cls-1" d="M169,788H134a4,4,0,0,1-4-4V761h43v23A4,4,0,0,1,169,788Zm-11-24H145v3h13v-3Zm-5-6V745h13.58a4.722,4.722,0,0,1,4.369,3.525l1.91,7.959a4.511,4.511,0,0,1,.09,1.516H153Zm-22.882-1.516,1.869-7.959A4.692,4.692,0,0,1,136.339,745H150v13H130.04A4.444,4.444,0,0,1,130.118,756.484Z" transform="translate(-130 -745)"/>
+</svg>

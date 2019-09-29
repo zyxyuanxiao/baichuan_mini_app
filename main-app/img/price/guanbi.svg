@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21.781" height="21.781" viewBox="0 0 21.781 21.781">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="guanbi" class="cls-1" d="M42.414,86l9.192,9.192a1,1,0,1,1-1.414,1.414L41,87.414l-9.192,9.192a1,1,0,0,1-1.414-1.414L39.586,86l-9.192-9.192a1,1,0,0,1,1.414-1.414L41,84.586l9.192-9.192a1,1,0,1,1,1.414,1.414Z" transform="translate(-30.125 -75.125)"/>
+</svg>

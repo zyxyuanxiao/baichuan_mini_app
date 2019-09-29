@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46" height="41" viewBox="0 0 46 41">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff5c7f;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="在线客服" class="cls-1" d="M641,745H628l-4,5-4-5H607a6,6,0,0,1-6-6V715a6,6,0,0,1,6-6h34a6,6,0,0,1,6,6v24A6,6,0,0,1,641,745Zm-26-16h17a1,1,0,0,0,0-2H615A1,1,0,0,0,615,729Zm23-8H610a1,1,0,0,0,0,2h28A1,1,0,0,0,638,721Z" transform="translate(-601 -709)"/>
+</svg>

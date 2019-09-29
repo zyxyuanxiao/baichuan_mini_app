@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #7c829d;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="shousuo" class="cls-1" d="M678.431,201.428a1.931,1.931,0,0,1-2.729,0l-2.163-2.164a1.929,1.929,0,1,1,2.728-2.729l2.164,2.164A1.929,1.929,0,0,1,678.431,201.428ZM664,200a13,13,0,1,1,13-13A13,13,0,0,1,664,200Zm0-23a10,10,0,1,0,10,10A10,10,0,0,0,664,177Z" transform="translate(-651 -174)"/>
+</svg>

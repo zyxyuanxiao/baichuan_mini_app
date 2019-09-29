@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="41" viewBox="0 0 44 41">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #cacee0;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="邮寄手机" class="cls-1" d="M480,197H444a4,4,0,0,1-4-4V160a4,4,0,0,1,4-4h36a4,4,0,0,1,4,4v33A4,4,0,0,1,480,197Zm0-37H444v33h36V160Zm-12,15h-4v10h-4V175h-4l6-8Z" transform="translate(-440 -156)"/>
+</svg>

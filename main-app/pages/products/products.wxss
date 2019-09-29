@@ -1,0 +1,136 @@
+@import "../../components/search-entry.wxss";
+
+.search-entry-wrapper {
+    padding-bottom: 40rpx;
+}
+
+.container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+}
+
+.category-wrapper {
+    overflow: visible;
+    position: relative;
+    margin-top: -20rpx;
+    background-color: transparent;
+}
+
+.cate-cols {
+    height: 88rpx;
+    line-height: 88rpx;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border-bottom: 1rpx #e7e8f0 solid;
+}
+
+.cate-col {
+    display: inline-block;
+    width: 33.3333%;
+    color: #aab2bd;
+    font-size: 32rpx;
+    text-align: center;
+}
+
+.cate-col.current {
+    color: #000;
+    font-weight: bold;
+    font-family: PingFang-SC-Medium;
+}
+
+.category-wrapper .line {
+    z-index: 2;
+    position: absolute;
+    top: 84rpx;
+    left: 0;
+    width: 33.3333%;
+    height: 4rpx;
+    transform: scaleX(.2);
+    transform-origin: 50% 50%;
+    background-color: #000;
+    transition: all 400ms;
+}
+
+.content-wrapper {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 206rpx;
+    bottom: 0;
+}
+
+.brand-cols-wrapper {
+    width: 26%;
+    height: 100%;
+}
+
+.brand-cols {
+    height: 100%;
+    color: #7c829d;
+    font-size: 28rpx;
+    background-color: #f9f9fb;
+}
+
+.brand-col {
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+}
+
+.brand-col.current {
+    color: #fabe00;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+.product-cols-wrapper {
+    flex: 1;
+    width: 74%;
+    height: 100%;
+}
+
+.product-cols {
+    height: 100%;
+    background-color: #fff;
+}
+
+.product-col {
+    display: flex;
+    width: 100%;
+    height: 100rpx;
+    padding-left: 30rpx;
+    padding-right: 40rpx;
+    line-height: 100rpx;
+    color: #7c829d;
+    font-size: 28rpx;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.product-col .sort-number {
+    min-width: 40rpx;
+    padding: 6rpx 8rpx;
+    margin-right: 20rpx;
+    color: #fff;
+    font-size: 24rpx;
+    text-align: center;
+    line-height: 26rpx;
+    border-radius: 2rpx;
+    background-color: #dddee7;
+}
+
+.product-col .fore1 {
+    background: #ff4e6f;
+}
+
+.product-col .fore2 {
+    background: #ff9a68;
+}
+
+.product-col .fore3 {
+    background: #ffd59f;
+}

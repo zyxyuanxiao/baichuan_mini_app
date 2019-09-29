@@ -1,0 +1,23 @@
+<view class='main-box'>
+  <scroll-view class='nav-scroll' scroll-y="true">
+    <view class="row">
+      <navigator wx:for="{{routers}}" url="{{item.url}}?routersid={{item.id}}" wx:key>
+        <view class="item_size">
+          <image class="img" src="{{item.icon}}"></image>
+          <text class="text">{{item.name}}</text>
+        </view>
+      </navigator>
+    </view>
+  </scroll-view>
+</view>
+<view class="mendian-box">
+  <view class="mendian">
+    <text class="title">门店地址</text>
+    <text class="cont">佰川贵州回收部 181-9857-5678</text>
+    <text class="bot">贵州省贵阳市南明区和丰大厦商城2楼1号</text>
+  </view>
+  <view class="botton-box">
+    <view class="lianxi">联系门店</view>
+    <view class="lianxi">复制信息</view>
+  </view>
+</view>

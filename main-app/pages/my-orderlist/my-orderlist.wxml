@@ -1,0 +1,17 @@
+<!--pages/my-orderlist/my-orderlist.wxml-->
+<view class="main-box">
+  <view class="order-no">订单号：20190908123456</view>
+  <view class="order-detail">
+    <view class="phone-attr">苹果 iPhone XSMAX 靓机 256G 大陆行 保修60天以上 金</view>
+    <view class="price">
+      <text>6350.00</text>
+      <text>X 1</text>
+    </view>
+  </view>
+  <view class="order-time">下单时间：2019-09-09 23：08：34</view>
+  <view class="order-sum">
+    <view class="total">合计：6350.00（共计1件）</view>
+    <view class="cenlce">取消</view>
+  </view>
+</view>
+<view>暂无相关订单信息...</view>

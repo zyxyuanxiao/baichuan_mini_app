@@ -1,0 +1,90 @@
+<view class="main-box">
+  <view class="banner">
+    <swiper autoplay="true" class="swiper-wrapper" indicatorActiveColor="#fff" indicatorColor="#cda8df" indicatorDots="{{imgUrls.length>1}}" interval="2000">
+      <navigator url="{{item.url}}" wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image class="slide-image" mode="aspectFill" src="{{item.src}}"></image>
+        </swiper-item>
+      </navigator>
+    </swiper>
+  </view>
+  <view class="cate-cols">
+    <button bindtap="switchProducts" class="cate-col mue-navigator" data-bid="{{item.bid}}" data-cid="{{item.cid}}" hoverClass="mue-active" plain="true" wx:for="{{cateList}}" wx:key="{{index}}">
+      <image class="icon" src="{{item.imgSrc}}"></image>
+      <view class="text">{{item.text}}</view>
+    </button>
+  </view>
+  <view class="huishou-btn">
+    <button class="button" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">报价查询</button>
+  </view>
+  <view class="sec recycle-process">
+    <view class="sec-title common-padding sub-title">
+      <view class="left font-medium">回收流程</view>
+    </view>
+    <view bindtap="switchPage" class="sec-content" data-url="../recycle/index">
+      <view class="grid-cols">
+        <view class="grid-col has-arrow" bindtap="switchProducts">
+          <image class="icon" src="../../img/choose-phone.png"></image>
+          <view class="col-text">选择机型</view>
+          <image class="arrow-right" src="../../img/arrow_right.svg"></image>
+        </view>
+        <view class="grid-col has-arrow" bindtap="switchProducts">
+          <image class="icon" src="../../img/check-price.png"></image>
+          <view class="col-text">查询价格</view>
+          <image class="arrow-right" src="../../img/arrow_right.svg"></image>
+        </view>
+        <view class="grid-col has-arrow" bindtap="switchProducts">
+          <image class="icon" src="../../img/oder-list.png"></image>
+          <view class="col-text">填写订单</view>
+          <image class="arrow-right" src="../../img/arrow_right.svg"></image>
+        </view>
+        <view class="grid-col" bindtap="switchProducts">
+          <image class="icon" src="../../img/get-money.png"></image>
+          <view class="col-text">完成收款</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="sec service-ensure">
+    <view class="sec-title common-padding sub-title">
+      <view class="left font-medium">客服热线</view>
+    </view>
+    <view class="sec-content" style="padding-bottom:20rpx;">
+      <view class="grid-colb grid-cols-2">
+        <view class="grid-col">
+          <image class="icon" src="../../img/icon-qgby-1.png"></image>
+          <view class="col-text">回收客服热线：18198575678</view>
+        </view>
+        <view class="grid-col">
+          <image class="icon" src="../../img/icon-qtbj-1.png"></image>
+          <view class="col-text">销售客服热线：18198576789</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="sec service-ensure">
+    <view class="sec-title common-padding sub-title">
+      <view class="left font-medium">合作加盟</view>
+    </view>
+    <view class="sec-content" style="padding-bottom:20rpx;">
+      <view class="grid-colb grid-cols-2">
+        <view class="grid-col">
+          <image class="icon" src="../../img/icon-qgby-1.png"></image>
+          <view class="col-text">渠道合作</view>
+          <view class="col-text">顺丰包邮 当天回款 互利共赢</view>
+        </view>
+        <view class="grid-col">
+          <image class="icon" src="../../img/icon-qtbj-1.png"></image>
+          <view class="col-text">战略合作</view>
+          <view class="col-text">平台对接 自动改价 垄断市场</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="sec copyright">
+    <view bindtap="kefu" class="kefu_phone" data-phone="{{setting.kefu_phone}}" wx:if="{{setting.kefu_phone}}">
+      <image class="icon" src="../../img/kefu.png" style="width:32rpx;height:32rpx;position:relative;top:6rpx;"></image>
+      客服电话：{{setting.kefu_phone}}</view>
+    <view class="company_name" wx:if="{{setting.company_name}}">{{setting.company_name}}</view>
+  </view>
+</view>

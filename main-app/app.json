@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/person/index",
+    "pages/products/products",
+    "pages/product/product",
+    "pages/order/order",
+    "pages/my-orderlist/my-orderlist"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "佰川回收",
+    "backgroundColor": "#f9f9fb",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "color": "#888",
+    "borderStyle": "white",
+    "selectedColor": "#353535",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/welcome/welcome",
+        "text": "首页",
+        "iconPath": "img/icon_home_gray_60.png",
+        "selectedIconPath": "img/icon_home_black_60.png"
+      },
+        {
+          "pagePath": "pages/products/products",
+          "text": "机型",
+          "iconPath": "img/phone-class-1.png",
+          "selectedIconPath": "img/phone-class.png"
+        },
+      {
+        "pagePath": "pages/person/index",
+        "text": "我的",
+        "iconPath": "img/icon_person_gray_60.png",
+        "selectedIconPath": "img/icon_person_black_60.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

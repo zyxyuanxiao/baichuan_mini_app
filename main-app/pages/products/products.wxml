@@ -1,0 +1,28 @@
+<import src="../../components/search-entry.wxml"></import>
+<view class="main-box">
+  <template is="search-entry" data="{{iconSearch:iconSearch,key:'输入您要搜索的机型'}}"></template>
+  <view class="category-wrapper">
+    <scroll-view class="cate-cols" scrollWithAnimation="true" scrollX="true">
+      <view bindtap="cateTapHandler" class="cate-col{{item.classid==cid?' current':''}}" data-cid="{{item.id}}" data-index="{{index}}" wx:for="{{cateList}}" wx:key="{{index}}">{{item.classname}}
+      </view>
+    </scroll-view>
+    <view class="line" style="left:{{left}};"></view>
+  </view>
+  <view class="content-wrapper">
+    <view class="brand-cols-wrapper">
+      <scroll-view class="brand-cols" scrollTop="{{brandScrollTop}}" scrollY="true">
+        <view bindtap="brandTapHandler" class="brand-col text-overflow{{item.id==bid?' current':''}}" data-bid="{{item.id}}" wx:for="{{brandList}}" wx:key="{{index}}">{{item.first_name}}
+        </view>
+      </scroll-view>
+    </view>
+    <view class="product-cols-wrapper">
+      <scroll-view bindscrolltolower="loadMoreProduct" class="product-cols" scrollTop="{{productScrollTop}}" scrollY="true">
+        <navigator class="product-col" url="../product/product?id={{item.id}}&name={{item.second_name}}" wx:for="{{productList}}" wx:key="{{index}}">
+          <view class="sort-number fore{{index+1}}">{{index+1}}</view>
+          <view class="product-name text-overflow">{{item.second_name}}</view>
+        </navigator>
+        <view class="product-col" wx:if="{{productList.length===0}}">此品牌暂无机型</view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,170 @@
+/* pages/order/order.wxss */
+
+page {
+  background-color: rgb(243, 227, 227);
+}
+
+.main-box {
+  background-color: white;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(6, 94, 134);
+  color: white;
+  height: 300rpx;
+}
+
+.daifahuo {
+  text-align: center;
+  font-size: 38rpx;
+  top: 20rpx;
+}
+
+.des {
+  text-align: center;
+  font-size: 22rpx;
+  margin-top: 30rpx;
+}
+
+.time {
+  text-align: right;
+  margin-right: 20px;
+  font-size: 22rpx;
+  padding-top: 60rpx;
+}
+
+.info-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.order-sum {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+}
+
+.order-title {
+  margin-top: 20rpx;
+  color: #ccc;
+  font-size: 26rpx;
+}
+
+.sum-price {
+  margin-top: 35rpx;
+  font-size: 30rpx;
+}
+
+.adds {
+  margin-top: 50rpx;
+  background-color: rgb(20, 143, 201);
+  width: 230rpx;
+  height: 60rpx;
+  color: white;
+  border-radius: 2em;
+  text-align: center;
+  padding-top: 15rpx;
+}
+
+.fahuo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgb(243, 227, 227);
+}
+
+.descc {
+  text-align: center;
+  margin-top: 45rpx;
+  margin-left: 20rpx;
+  color: rgb(143, 132, 132);
+}
+
+.now {
+  margin-top: 30rpx;
+  background-color: rgb(235, 141, 238);
+  width: 230rpx;
+  height: 60rpx;
+  color: white;
+  border-radius: 2em;
+  text-align: center;
+  padding-top: 15rpx;
+  margin-bottom: 30rpx;
+  margin-left: 60rpx;
+}
+
+.phone-attr {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 50rpx;
+  padding-bottom: 30rpx;
+}
+
+.phone_name {
+  width: 80%;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+
+.phone-add {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-price {
+  font-size: 26rpx;
+  padding-top: 5rpx;
+  font-weight: bold;
+}
+
+.addPhone {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-top: 20rpx;
+}
+
+.icon {
+  width: 33.33%;
+  font-size: 40rpx;
+  text-align: center;
+  font-weight: bold;
+}
+
+.count {
+  font-size: 26rpx;
+  width: 33.33%;
+  text-align: center;
+  padding-top: 15rpx;
+}
+
+.del {
+  padding-top: 20rpx;
+  color: rgb(141, 130, 130);
+  text-align: center;
+}
+
+.bottom-btn {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  flex-direction: row-reverse;
+  padding-top: 30rpx;
+}
+.bottom-btn button{
+  color: white;
+  background-color: rgb(107, 99, 99);
+  font-size: 32rpx;
+}

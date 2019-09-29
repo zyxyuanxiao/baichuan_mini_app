@@ -1,0 +1,126 @@
+/* pages/product/product.wxss */
+page{
+  background-color:  rgb(240, 230, 230);
+}
+.main-box{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: white;
+  margin-bottom: 96rpx;
+}
+
+.jixing{
+  width: 100%;
+  height: 40rpx;
+  padding-left: 20rpx;
+  margin-bottom:10rpx; 
+}
+.pinggu{
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  color: rgb(133, 125, 125);
+}
+.des{
+  width: 100%;
+ 
+  background-color: rgb(240, 230, 230);
+}
+.shiji{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 10rpx;
+  color: rgb(192, 183, 183);
+  font-size: 22rpx;
+  padding-bottom: 10rpx;
+}
+.canshu-box{
+  width: 100%;
+  height: 100%;
+}
+.title{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  font-weight: bold;
+}
+.canshu{
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.canshu-row{
+  display: flex;
+  flex-direction: row;
+}
+.cashu-sum{
+    min-width: 30rpx;
+    min-height: 25rpx;
+    padding: 10rpx 10rpx 10rpx 10rpx;
+    margin-right: 20rpx;
+    color: #fff;
+    font-size: 24rpx;
+    text-align: center;
+    line-height: 26rpx;
+    border-radius: 50%;
+    background-color: rgb(235, 141, 238);
+}
+.canshu-title{
+  color: rgb(235, 141, 238);
+  font-size: 26rpx;
+  padding-top: 5rpx; 
+}
+.shuxing-box{
+  width: 100%;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  padding-left: 30rpx;
+  border-left: 1rpx rgb(235, 141, 238) solid;
+  display: flex;
+  flex-direction: row;
+}
+.shuxing{
+  width: 28%;
+  margin-right: 20rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+  border: 1px rgb(235, 141, 238) solid;
+  text-align: center;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+}
+.shuxing.shuxings{
+  background-color: rgb(235, 141, 238);
+}
+.bottom-box{
+  width: 100%;
+  position:fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+}
+.go-home{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+.go-home image{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 auto;
+  padding-top: 10rpx;
+}
+.order-btn{
+  width: 70%;
+}
+.order-btn button{
+  background-color: rgb(168, 124, 124);
+  border-radius: 0;
+  color: white;
+}
+.setBg{
+  background-color: rgb(235, 141, 238);
+  color: white;
+}

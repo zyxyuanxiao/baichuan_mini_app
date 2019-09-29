@@ -1,0 +1,34 @@
+<!--pages/product/product.wxml-->
+<view class="main-box">
+  <view class="jixing">
+    <text class="jixing-text">{{phoneName}}</text>
+    <text class="pinggu">在线评估</text>
+  </view>
+  <view class="des">
+    <view class="shiji">请根据实际情况评估；如最终检测结果与您评估一致，收款速度提升30%以上！</view>
+  </view>
+  <view class="canshu-box">
+    <view class="title">回收评估</view>
+    <!-- 列表循环 -->
+    <view class="canshu" wx:for="{{attributeList}}" wx:key="{{item.id}}">
+      <!-- 列表标题 -->
+      <view class="canshu-row">
+        <view class="cashu-sum fore{{index+1}}">{{index+1}}</view>
+        <view class="canshu-title">{{item.attr_name}}</view>
+      </view>
+      <!-- 列表具体属性 嵌套循环 -->
+      <view class="shuxing-box">
+        <view class="shuxing}}" wx:for="{{item.child}}" wx:for-index="detailIndex" wx:key="{{item.attr_id}}" bindtap="chooseSx" data-item="{{item.attr_value}}" data-id="{{item.id}}" data-attrid="{{item.attr_id}}" data-boxindex="{{index}}" data-detailindex="{{detailIndex}}"
+          style="background-color:{{item.isMark?'#3399FF':'white'}}">{{item.attr_value}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="bottom-box">
+  <view class="go-home">
+    <image src="../../img/icon_home_black_60.png"></image>
+  </view>
+  <view class="order-btn">
+    <button class="go-order" bindtap="go_order">提交订单</button>
+  </view>
+</view>

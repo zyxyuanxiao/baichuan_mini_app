@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #cacee0;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="weixuanze" class="cls-1" d="M75,1389a15,15,0,1,1,15-15A15,15,0,0,1,75,1389Zm0-27a12,12,0,1,0,12,12A12,12,0,0,0,75,1362Z" transform="translate(-60 -1359)"/>
+</svg>

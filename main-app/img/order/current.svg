@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5498ff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="椭圆_7" data-name="椭圆 7" class="cls-1" d="M131,598a15,15,0,1,1,15-15A15,15,0,0,1,131,598Zm8.278-19.828a1.5,1.5,0,0,0-2.121,0l-7.425,7.424-3.889-3.889a1.5,1.5,0,1,0-2.121,2.121l4.95,4.95a1.5,1.5,0,0,0,2.121,0l8.485-8.485A1.5,1.5,0,0,0,139.278,578.172Z" transform="translate(-116 -568)"/>
+</svg>
