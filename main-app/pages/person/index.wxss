@@ -102,3 +102,30 @@ background:#888;
   text-align: center;
   font-size: 28rpx;
 }
+.communication-box{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.communication{
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+.communication image{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
+}
+.kefu{
+  border-radius: 0;
+  border: 0;
+  background-color: white;
+}
+.kefu::after{
+  border: none;
+}

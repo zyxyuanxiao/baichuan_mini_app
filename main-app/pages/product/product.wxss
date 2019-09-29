@@ -116,11 +116,51 @@ page{
   width: 70%;
 }
 .order-btn button{
-  background-color: rgb(168, 124, 124);
+  background-color: rgb(51, 184, 62);
   border-radius: 0;
   color: white;
 }
 .setBg{
   background-color: rgb(235, 141, 238);
   color: white;
+}
+.baojia-box{
+  width: 100%;
+  height: 100%;
+}
+.input-box {
+  /* width: 100%;
+  display: flex;
+  flex-direction: row; */
+  margin-left: 50rpx;
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  font-family: "Microsoft YaHei";
+}
+  radio {
+    width: 38rpx;
+}
+
+radio {
+  width: 38rpx;
+}
+
+radio .wx-radio-input {
+  border-radius: 50%;
+  width: 28rpx;
+  height: 28rpx;
+}
+
+/* 选中后的样式 （可根据设计稿需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%;
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  font-size: 26rpx; /* 对勾大小 26rpx */
+  color: #fff; /* 对勾颜色 */
+  background: #2facff;
+  border-color: #2facff;
 }

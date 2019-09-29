@@ -10,6 +10,16 @@
     </view>
   </scroll-view>
 </view>
+<view class="communication-box">
+  <view class="communication">
+    <image src="../../img/person/kefu.png"></image>
+    <button open-type='contact' class='kefu' session-from='weapp'>在线客服</button>
+  </view>
+  <view class="communication" bindtap="phoneCall" data-phone="18198575678">
+    <image src="../../img/kefu.png"></image>
+    <button class='kefu' >客服电话</button>
+  </view>
+</view>
 <view class="mendian-box">
   <view class="mendian">
     <text class="title">门店地址</text>
@@ -17,7 +27,7 @@
     <text class="bot">贵州省贵阳市南明区和丰大厦商城2楼1号</text>
   </view>
   <view class="botton-box">
-    <view class="lianxi">联系门店</view>
+  <view class="lianxi" bindtap="phoneCall" data-phone="18198575678">联系门店</view>
     <view class="lianxi">复制信息</view>
   </view>
 </view>

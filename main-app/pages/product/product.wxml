@@ -23,6 +23,21 @@
       </view>
     </view>
   </view>
+
+  <view class="baojia-box" wx:for="{{baojiaList}}">
+    <view class="title">回收报价</view>
+    <view class="baojia">
+      <view>{{item.sta_name}} {{item.price}}</view>
+      <view class='input-box'>
+        <text>查看报价标准</text>
+        <radio-group name="sex" class="choose-sex">
+          <label>
+            <radio value="{{item.id}}" checked="{{post.sex==1}}" />
+          </label>
+        </radio-group>
+      </view>
+    </view>
+  </view>
 </view>
 <view class="bottom-box">
   <view class="go-home">

@@ -14,23 +14,23 @@
       <text class="order-title">总低价</text>
       <text class="sum-price">10000.00元</text>
     </view>
-    <view class="adds">继续添加</view>
+    <view class="adds" bindtap="goProduct">继续添加</view>
   </view>
   <view class="fahuo">
     <text class="descc">为了售出高价，请尽快发货！</text>
-    <view class="now">立即发货</view>
+    <view class="now" bindtap="goDeliver">立即发货</view>
   </view>
   <view class="phone-attr">
     <view class="phone_name">苹果 iPhone XSMAX 靓机 256G 大陆行 保修60天以上 金</view>
     <view class="phone-add">
       <view class="phone-price">￥6422.00</view>
       <view class="addPhone">
-        <view class="icon">-</view>
+        <!-- <view class="icon">-</view>
         <view class="count">2</view>
-        <view class="icon">+</view>
+        <view class="icon">+</view> -->
       </view>
       <view class="del">删除</view>
     </view>
   </view>
 </view>
- <view class="bottom-btn"><button>稍后发货</button></view>
+ <view class="bottom-btn"><button bindtap="goIndex">稍后发货</button></view>

@@ -53,11 +53,11 @@
       <view class="grid-colb grid-cols-2">
         <view class="grid-col">
           <image class="icon" src="../../img/icon-qgby-1.png"></image>
-          <view class="col-text">回收客服热线：18198575678</view>
+          <view class="col-text" bindtap="phoneCall" data-phone="18198575678">回收客服热线：18198575678</view>
         </view>
         <view class="grid-col">
           <image class="icon" src="../../img/icon-qtbj-1.png"></image>
-          <view class="col-text">销售客服热线：18198576789</view>
+          <view class="col-text" bindtap="phoneCall" data-phone="18198576789">销售客服热线：18198576789</view>
         </view>
       </view>
     </view>
@@ -70,13 +70,13 @@
       <view class="grid-colb grid-cols-2">
         <view class="grid-col">
           <image class="icon" src="../../img/icon-qgby-1.png"></image>
-          <view class="col-text">渠道合作</view>
-          <view class="col-text">顺丰包邮 当天回款 互利共赢</view>
+          <view class="col-text">渠道合作 顺丰包邮 当天回款 互利共赢</view>
+          <!-- <view class="col-text"></view> -->
         </view>
         <view class="grid-col">
           <image class="icon" src="../../img/icon-qtbj-1.png"></image>
-          <view class="col-text">战略合作</view>
-          <view class="col-text">平台对接 自动改价 垄断市场</view>
+          <view class="col-text">战略合作 平台对接 自动改价 垄断市场</view>
+          <!-- <view class="col-text"></view> -->
         </view>
       </view>
     </view>

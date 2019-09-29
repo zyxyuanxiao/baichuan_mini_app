@@ -1,4 +1,4 @@
-// pages/order/order.js
+// pages/deliver/deliver.js
 Page({
 
   /**
@@ -13,21 +13,6 @@ Page({
    */
   onLoad: function (options) {
 
-  },
-  goProduct:function(){
-    wx.switchTab({
-      url: '../products/products',
-    })
-  },
-  goDeliver:function(){
-    wx.navigateTo({
-      url: '../deliver/deliver',
-    })
-  },
-  goIndex:function(){
-    wx.switchTab({
-      url: '../welcome/welcome',
-    })
   },
 
   /**

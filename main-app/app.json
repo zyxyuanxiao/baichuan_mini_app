@@ -5,7 +5,10 @@
     "pages/products/products",
     "pages/product/product",
     "pages/order/order",
-    "pages/my-orderlist/my-orderlist"
+    "pages/my-orderlist/my-orderlist",
+    "pages/address/address",
+    "pages/bind/bind",
+    "pages/deliver/deliver"
   ],
   "window": {
     "navigationBarTextStyle": "black",

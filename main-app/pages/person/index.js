@@ -18,13 +18,13 @@ Page({
     }, {
       name: '待完成',
       url: '../my-orderlist/my-orderlist?status=3',
-      icon: '../../img/person/wan.png',
+      icon: '../../img/person/dwc.png',
       id: "003"
     }, 
       {
         name: '待收款',
         url: '../my-orderlist/my-orderlist?status=3',
-        icon: '../../img/person/wan.png',
+        icon: '../../img/person/dsk.png',
         id: "003"
       }, {
         name: '已完成',
@@ -34,12 +34,12 @@ Page({
       }, {
       name: '待退回',
       url: 'user-customerinfo/user-customerinfo?type=1004',
-      icon: '../../img/person/kefu.png',
+      icon: '../../img/person/dth.png',
       id: "004"
     }, {
       name: '已退回',
       url: 'user-customerinfo/user-customerinfo?type=1006',
-      icon: '../../img/person/dizhi.png',
+      icon: '../../img/person/yth.png',
       id: "006"
       },{
         name: '地址管理',
@@ -49,7 +49,7 @@ Page({
       }, {
         name: '全部订单',
         url: 'user-customerinfo/user-customerinfo?type=1006',
-        icon: '../../img/person/dizhi.png',
+        icon: '../../img/person/qbdd.png',
         id: "006"
       }]
   },
@@ -59,6 +59,12 @@ Page({
    */
   onLoad: function(options) {
 
+  },
+  phoneCall: function (e) {
+    console.log("aaa", e.currentTarget.dataset.phone);
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.phone,
+    })
   },
 
   /**
