@@ -1,2 +1,35 @@
 <!--pages/deliver/deliver.wxml-->
-<text>pages/deliver/deliver.wxml</text>
+<view class="main-box">
+  <view class="bc-address">
+    邮寄地址
+    <view class="address-box">
+      <view class="nei-box">
+        <view class="title"> 收货人：</view>
+        <view class="content">{{name}}</view>
+      </view>
+      <view class="nei-box">
+        <view class="title"> 地 址：</view>
+        <view class="content">{{address}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">物流公司</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" type='text' name="username" bindinput='userPhone_no' placeholder="请输入物流公司名称" />
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">物流单号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" type="password" name="password" bindinput='passwordinput' placeholder="请输入物流单号" />
+      </view>
+    </view>
+  </view>
+  <button class="weui-btn weui-btn_mini  bg-blue" type="primary" size="" bindtap='signin'>提交</button>
+</view>

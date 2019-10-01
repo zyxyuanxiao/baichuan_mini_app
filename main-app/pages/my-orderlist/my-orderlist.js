@@ -1,18 +1,39 @@
 // pages/my-orderlist/my-orderlist.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var openid = wx.getStorageSync('user_id');
+    wx.request({
+      url: app.API + "getUserOrderList",
+      data: {
+        openid: openid,
+        status:options.status
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function (res) {
+        console.log("返回的订单", res.data);
+        that.setData({
+          orderList: res.data
+        })
+      }
+    })
   },
 
   /**

@@ -1,1 +1,43 @@
 /* pages/deliver/deliver.wxss */
+page{
+  background-color: rgb(252, 250, 250);
+}
+.main-box{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+   background-color: white;
+}
+.bc-address{
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+ 
+}
+.address-box{
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #3399FF;
+  color: white;
+  margin-top: 10rpx;
+  padding: 10rpx;
+  border-radius: 0.5em;
+}
+.nei-box{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.title{
+  width: 20%;
+}
+.content{
+  width: 80%;
+}
+.fahuo-num-box{
+  width: 100%;
+  
+}

@@ -1,17 +1,19 @@
 <!--pages/my-orderlist/my-orderlist.wxml-->
-<view class="main-box">
-  <view class="order-no">订单号：20190908123456</view>
-  <view class="order-detail">
-    <view class="phone-attr">苹果 iPhone XSMAX 靓机 256G 大陆行 保修60天以上 金</view>
-    <view class="price">
-      <text>6350.00</text>
-      <text>X 1</text>
+<view wx:if="{{orderList==0}}">暂无相关订单信息...</view>
+<view wx:else="{{orderList}}">
+  <view class="main-box" wx:for="{{orderList}}" wx:key="{{item.id}}">
+    <view class="order-no">{{item.id}}</view>
+    <view class="order-detail">
+      <view class="phone-attr">{{item.second_name}}{{item.param}}</view>
+      <view class="price">
+        <text>￥{{item.price}}</text>
+        <!-- <text>X 1</text> -->
+      </view>
+    </view>
+    <view class="order-time">下单时间：{{item.orderTime}}</view>
+    <view class="order-sum">
+      <view class="total">合计：{{item.price}}（共计1件）</view>
+      <view class="cenlce">取消</view>
     </view>
   </view>
-  <view class="order-time">下单时间：2019-09-09 23：08：34</view>
-  <view class="order-sum">
-    <view class="total">合计：6350.00（共计1件）</view>
-    <view class="cenlce">取消</view>
-  </view>
 </view>
-<view>暂无相关订单信息...</view>

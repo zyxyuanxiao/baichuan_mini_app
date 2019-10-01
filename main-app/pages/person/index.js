@@ -23,32 +23,32 @@ Page({
     }, 
       {
         name: '待收款',
-        url: '../my-orderlist/my-orderlist?status=3',
+        url: '../my-orderlist/my-orderlist?status=4',
         icon: '../../img/person/dsk.png',
         id: "003"
       }, {
         name: '已完成',
-        url: '../my-orderlist/my-orderlist?status=3',
+        url: '../my-orderlist/my-orderlist?status=5',
         icon: '../../img/person/wan.png',
         id: "003"
       }, {
       name: '待退回',
-      url: 'user-customerinfo/user-customerinfo?type=1004',
+        url: '../my-orderlist/my-orderlist?status=3',
       icon: '../../img/person/dth.png',
       id: "004"
     }, {
       name: '已退回',
-      url: 'user-customerinfo/user-customerinfo?type=1006',
+        url: '../my-orderlist/my-orderlist?status=3',
       icon: '../../img/person/yth.png',
       id: "006"
       },{
         name: '地址管理',
-        url: 'user-customerinfo/user-customerinfo?type=1006',
+        url: '',
         icon: '../../img/person/dizhi.png',
         id: "006"
       }, {
         name: '全部订单',
-        url: 'user-customerinfo/user-customerinfo?type=1006',
+        url: '../my-orderlist/my-orderlist',
         icon: '../../img/person/qbdd.png',
         id: "006"
       }]

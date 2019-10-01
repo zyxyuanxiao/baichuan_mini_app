@@ -1,5 +1,6 @@
 // pages/product/product.js
 const app = getApp();
+var util = require('../../utils/util.js');
 var f = []
 Page({
 
@@ -12,7 +13,7 @@ Page({
     searchModel: [],
     second_id: null,
     filter: '',
-
+    baojiaList:[]
   },
 
   /**
@@ -21,6 +22,7 @@ Page({
   onLoad: function (options) {
     var second_id = options.id;
     var second_name = options.name;
+    wx.setStorageSync("second_id", options.id)
     console.log(second_id, second_name)
     var that = this;
     that.setData({
@@ -46,11 +48,7 @@ Page({
       }
     })
   },
-  go_order: function () {
-    wx.redirectTo({
-      url: '../order/order',
-    })
-  },
+ 
   chooseSx: function (e) {
     let FiledArr = []
     // 暂存指针
@@ -114,7 +112,8 @@ Page({
     // console.log(filter)
 
     var that = this;
-    var filter = that.data.filter
+    var filter = that.data.filter;
+    console.log("filter",filter);
     wx.request({
       url: app.API + "getAssess",
       data: {
@@ -129,10 +128,61 @@ Page({
       responseType: 'text',
       success: function (res) {
         console.log(res);
-        baojiaList:res.data
+        that.setData({
+          baojiaList: res.data
+        })
       }
     })
   },
+  radio: function (e) {
+    var id = e.currentTarget.dataset.id;
+    wx.setStorageSync("assess_id", id)
+    this.setData({
+      id: id,
+    })
+  },
+  go_order: function (e) {
+    var currenTime = util.formatTime(new Date());
+    console.log("时间", currenTime);
+    var user_id = wx.getStorageSync("user_id");
+    var second_id = wx.getStorageSync("second_id");
+    var assess_id = wx.getStorageSync("assess_id");   //这里不应该用缓存，后期会改进
+    console.log("要提交的", user_id, second_id, assess_id);
+    if (assess_id===""){
+      wx.showModal({
+        title: "信息提示",
+        content: "请选择报价标准再提交"
+      })
+    }else{
+      wx.request({
+        url: app.API + "addOrder",
+        data: {
+          openid: user_id,
+          second_id: second_id,
+          assess_id: assess_id,
+          orderTime: currenTime
+        },
+        method: 'GET',
+        dataType: 'json',
+        responseType: 'text',
+        success: function (res) {
+          console.log("下单返回", res)
+          if (res.data.code == 1) {
+            wx.redirectTo({
+              url: '../order/order',
+            })
+          } else {
+            wx.showModal({
+              title: "信息提示",
+              content: " 下单失败了！！！"
+            })
+          }
+        }
+      })
+    }
+   
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
