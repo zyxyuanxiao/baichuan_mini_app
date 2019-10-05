@@ -3,7 +3,7 @@
   <template is="search-entry" data="{{iconSearch:iconSearch,key:'输入您要搜索的机型'}}"></template>
   <view class="category-wrapper">
     <scroll-view class="cate-cols" scrollWithAnimation="true" scrollX="true">
-      <view bindtap="cateTapHandler" class="cate-col{{item.classid==cid?' current':''}}" data-cid="{{item.id}}" data-index="{{index}}" wx:for="{{cateList}}" wx:key="{{index}}">{{item.classname}}
+      <view bindtap="cateTapHandler" class="cate-col{{1==cid?' current':''}}" data-cid="{{item.id}}" data-index="{{index}}" wx:for="{{cateList}}" wx:key="{{index}}">{{item.classname}}
       </view>
     </scroll-view>
     <view class="line" style="left:{{left}};"></view>

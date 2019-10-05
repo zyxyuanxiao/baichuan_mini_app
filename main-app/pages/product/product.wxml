@@ -18,15 +18,15 @@
       </view>
       <!-- 列表具体属性 嵌套循环 -->
       <view class="shuxing-box">
-        <view class="shuxing}}" wx:for="{{item.child}}" wx:for-index="detailIndex" wx:key="{{item.attr_id}}" bindtap="chooseSx" data-item="{{item.attr_value}}" data-id="{{item.id}}" data-attrid="{{item.attr_id}}" data-boxindex="{{index}}" data-detailindex="{{detailIndex}}"
+        <view class="shuxing" wx:for="{{item.child}}" wx:for-index="detailIndex" wx:key="{{item.attr_id}}" bindtap="chooseSx" data-item="{{item.attr_value}}" data-id="{{item.id}}" data-attrid="{{item.attr_id}}" data-boxindex="{{index}}" data-detailindex="{{detailIndex}}"
           style="background-color:{{item.isMark?'#3399FF':'white'}}">{{item.attr_value}}</view>
       </view>
     </view>
   </view>
-  <view class="baojia-box" >
+  <view class="baojia-box">
     <view class="title">回收报价</view>
     <view class="baojia" wx:for="{{baojiaList}}">
-      <view class="money">{{item.sta_name}} {{item.price}}</view>
+      <view class="money">{{item.sta_name}} <text class="price--text">{{item.price}}</text> </view>
       <view class='input-box'>
         <view class="biaozhun-text">报价标准</view>
         <radio-group bindchange="checkboxChange" name="baojia_id">

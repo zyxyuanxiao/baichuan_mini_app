@@ -63,10 +63,10 @@ page{
     text-align: center;
     line-height: 26rpx;
     border-radius: 50%;
-    background-color: rgb(235, 141, 238);
+    background-color: #3399FF;
 }
 .canshu-title{
-  color: rgb(235, 141, 238);
+  color: #3399FF;
   font-size: 26rpx;
   padding-top: 5rpx; 
 }
@@ -75,23 +75,24 @@ page{
   margin-top: 10rpx;
   margin-left: 20rpx;
   padding-left: 30rpx;
-  border-left: 1rpx rgb(235, 141, 238) solid;
+  border-left: 1rpx #3399FF solid;
   display: flex;
   flex-direction: row;
 }
 .shuxing{
-  width: 28%;
+  width: 25%;
   margin-right: 20rpx;
-  line-height: 80rpx;
-  height: 80rpx;
-  border: 1px rgb(235, 141, 238) solid;
+  line-height: 60rpx;
+  height: 60rpx;
+  border: 1px #3399FF solid;
   text-align: center;
   margin-top: 10rpx;
   margin-bottom: 20rpx;
   border-radius: 10rpx;
+  font-size: 28rpx;
 }
 .shuxing.shuxings{
-  background-color: rgb(235, 141, 238);
+  background-color: #3399FF;
 }
 .bottom-box{
   width: 100%;
@@ -167,6 +168,7 @@ radio .wx-radio-input.wx-radio-input-checked::before {
 .money{
   width: 68%;
   text-align: left;
+  font-weight: bold;
 }
 .input-box {
   width: 32%;
@@ -180,4 +182,7 @@ radio .wx-radio-input.wx-radio-input-checked::before {
 }
 radio-group{
   margin-left: 20rpx;
+}
+.price--text{
+  color: red;
 }

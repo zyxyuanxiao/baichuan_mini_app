@@ -9,7 +9,7 @@
     </swiper>
   </view>
   <view class="cate-cols">
-    <button bindtap="switchProducts" class="cate-col mue-navigator" data-bid="{{item.bid}}" data-cid="{{item.cid}}" hoverClass="mue-active" plain="true" wx:for="{{cateList}}" wx:key="{{index}}">
+    <button bindtap="bindGetUserInfo" class="cate-col mue-navigator" data-bid="{{item.bid}}" data-cid="{{item.cid}}" hoverClass="mue-active" plain="true" wx:for="{{cateList}}" wx:key="{{index}}">
       <image class="icon" src="{{item.imgSrc}}"></image>
       <view class="text">{{item.text}}</view>
     </button>
@@ -23,22 +23,22 @@
     </view>
     <view bindtap="switchPage" class="sec-content" data-url="../recycle/index">
       <view class="grid-cols">
-        <view class="grid-col has-arrow" bindtap="switchProducts">
+        <view class="grid-col has-arrow" bindtap="bindGetUserInfo">
           <image class="icon" src="../../img/choose-phone.png"></image>
           <view class="col-text">选择机型</view>
           <image class="arrow-right" src="../../img/arrow_right.svg"></image>
         </view>
-        <view class="grid-col has-arrow" bindtap="switchProducts">
+        <view class="grid-col has-arrow" bindtap="bindGetUserInfo">
           <image class="icon" src="../../img/check-price.png"></image>
           <view class="col-text">查询价格</view>
           <image class="arrow-right" src="../../img/arrow_right.svg"></image>
         </view>
-        <view class="grid-col has-arrow" bindtap="switchProducts">
+        <view class="grid-col has-arrow" bindtap="bindGetUserInfo">
           <image class="icon" src="../../img/oder-list.png"></image>
           <view class="col-text">填写订单</view>
           <image class="arrow-right" src="../../img/arrow_right.svg"></image>
         </view>
-        <view class="grid-col" bindtap="switchProducts">
+        <view class="grid-col" bindtap="bindGetUserInfo">
           <image class="icon" src="../../img/get-money.png"></image>
           <view class="col-text">完成收款</view>
         </view>
@@ -51,13 +51,13 @@
     </view>
     <view class="sec-content" style="padding-bottom:20rpx;">
       <view class="grid-colb grid-cols-2">
-        <view class="grid-col">
-          <image class="icon" src="../../img/icon-qgby-1.png"></image>
-          <view class="col-text" bindtap="phoneCall" data-phone="18198575678">回收客服热线：18198575678</view>
+        <view class="grid-col-phone">
+          <image class="icon" src="../../img/hezuo.jpg"></image>
+          <view class="col-texta" bindtap="phoneCall" data-phone="18198575678"> 回收客服热线：<text class="phone--text">181-9857-5678</text></view>
         </view>
-        <view class="grid-col">
-          <image class="icon" src="../../img/icon-qtbj-1.png"></image>
-          <view class="col-text" bindtap="phoneCall" data-phone="18198576789">销售客服热线：18198576789</view>
+        <view class="grid-col-phone">
+          <image class="icon" src="../../img/hezuo.jpg"></image>
+          <view class="col-texta" bindtap="phoneCall" data-phone="18198576789"> 销售客服热线：<text class="phone--text">181-9857-6789</text></view>
         </view>
       </view>
     </view>
@@ -69,13 +69,13 @@
     <view class="sec-content" style="padding-bottom:20rpx;">
       <view class="grid-colb grid-cols-2">
         <view class="grid-col">
-          <image class="icon" src="../../img/icon-qgby-1.png"></image>
-          <view class="col-text">渠道合作 顺丰包邮 当天回款 互利共赢</view>
+          <image class="icon" src="../../img/back_phone.jpg"></image>
+          <view class="col-text"><text class="phone--texta">渠道合作 顺丰包邮 当天回款 互利共赢</text></view>
           <!-- <view class="col-text"></view> -->
         </view>
         <view class="grid-col">
-          <image class="icon" src="../../img/icon-qtbj-1.png"></image>
-          <view class="col-text">战略合作 平台对接 自动改价 垄断市场</view>
+          <image class="icon" src="../../img/back_phone.jpg"></image>
+          <view class="col-text"><text class="phone--texta">战略合作 平台对接 自动改价 垄断市场</text></view>
           <!-- <view class="col-text"></view> -->
         </view>
       </view>

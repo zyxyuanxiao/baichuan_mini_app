@@ -6,15 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    phonelist: [
-      {
-        name:'回收客服热线',
-        phoneNo:'18198575678' 
+    phonelist: [{
+        name: '回收客服热线',
+        phoneNo: '18198575678'
       },
       {
         name: '销售客服热线',
-        phoneNo: '18198576789' 
-      }],
+        phoneNo: '18198576789'
+      }
+    ],
     imgUrls: [{
         url: "../couponget/index",
         src: "../../img/activie.png"
@@ -50,47 +50,56 @@ Page({
    */
   onLoad: function() {
     // 查看是否授权
-    wx.getSetting({
-      success(res) {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function(res) {
-              console.log(res.userInfo)
-              //this.bindGetUserInfo(e);
-            }
-          })
-        }
-      }
-    })
+    // wx.getSetting({
+    //   success(res) {
+    //     if (res.authSetting['scope.userInfo']) {
+    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+    //       wx.getUserInfo({
+    //         success: function(res) {
+    //           console.log(res.userInfo)
+    //           //this.bindGetUserInfo(e);
+    //         }
+    //       })
+    //     }
+    //   }
+    // })
   },
   bindGetUserInfo: function(e) {
-    console.log(e.detail.userInfo);
-    wx.login({
-      success: function(res) {
-        console.log(res.code);
-        wx.request({
-          url: APP.API + 'login',
-          method: 'GET',
-          data: {
-            code: res.code,
-            avatar_url: e.detail.userInfo.avatarUrl,
-            city: e.detail.userInfo.province
-          },
-          success: function(res) {
-            console.log("后台返回的=====>", res);
-            var user_id = res.data.openid;
-            wx.setStorageSync("user_id", user_id);
-            console.log("user_id", user_id);
-            wx.switchTab({
-              url: '../products/products',
-            })
-          }
+    // console.log(e.detail.userInfo);
+    // wx.login({
+    //   success: function(res) {
+    //     console.log(res.code);
+    //     wx.request({
+    //       url: APP.API + 'login',
+    //       method: 'GET',
+    //       data: {
+    //         code: res.code,
+    //         avatar_url: e.detail.userInfo.avatarUrl,
+    //         city: e.detail.userInfo.province
+    //       },
+    //       success: function(res) {
+    //         console.log("后台返回的=====>", res);
+    //         var user_id = res.data.openid;
+    //         wx.setStorageSync("user_id", user_id);
+    //         console.log("user_id", user_id);
+    wx.showLoading({
+      title: '拼命加载中...',
+      success: function() {
+        wx.switchTab({
+          url: '../products/products',
         })
       }
     })
+    setTimeout(function() {
+      wx.hideLoading()
+    }, 1000)
+
+    //       }
+    //     })
+    //   }
+    // })
   },
-  phoneCall:function(e){
+  phoneCall: function(e) {
     console.log("aaa", e.currentTarget.dataset.phone);
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.phone,

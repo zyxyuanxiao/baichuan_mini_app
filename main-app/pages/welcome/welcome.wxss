@@ -170,7 +170,7 @@
 }
 
 .recycle-process .col-text {
-  margin-top: 16rpx;
+  margin-top: 10rpx;
   color: #7c829d;
   font-size: 24rpx;
 }
@@ -218,17 +218,38 @@
 
 .service-ensure .grid-col {
   position: relative;
-  width: 325rpx;
+  width: 280rpx;
   height: 140rpx;
   border-radius: 6rpx;
+  margin: 0 auto;
+  margin-right: 100rpx;
+}
+.grid-col-phone{
+  position: relative;
+  width: 250rpx;
+  height: 140rpx;
+  border-radius: 6rpx;
+  margin: 0 auto;
+  margin-right: 130rpx;
 }
 
 .service-ensure .col-text {
   position: absolute;
   left: 29rpx;
   top: 20rpx;
-  color: #999;
+  color: white;
   font-size: 26rpx;
+ /* align-items: center; */
+  /* margin-left: rpx; */
+}
+.col-texta{
+  position: absolute;
+  left: 29rpx;
+  top: 20rpx;
+  color: white;
+  font-size: 26rpx;
+ text-align: center;
+  /* margin-left: 25rpx; */
 }
 
 .service-ensure .sec-title {
@@ -429,3 +450,13 @@
   line-height: 48rpx;
   border-bottom: 2rpx solid #eee;
 }
+.phone--text{
+  color: white;
+  font-size: 28rpx;
+  /* font-weight:; */
+}
+.phone--texta{
+  color: white;
+  font-size: 30rpx;
+}
+
