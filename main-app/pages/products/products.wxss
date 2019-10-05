@@ -134,3 +134,6 @@
 .product-col .fore3 {
     background: #ffd59f;
 }
+.text-overflow{
+  font-size: 30rpx;
+}
