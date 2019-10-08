@@ -7,38 +7,38 @@ Page({
   data: {
     routers: [{
       name: '待发货',
-      url: '../my-orderlist/my-orderlist?status=1',
+      url: '../my-orderlist/my-orderlist?status=0',
       icon: '../../img/person/dai.png',
       id: "001"
     }, {
       name: '已发货',
-      url: '../my-orderlist/my-orderlist?status=2',
+      url: '../my-orderlist/my-orderlist?status=1',
       icon: '../../img/person/yifa.png',
       id: "002"
     }, {
       name: '待完成',
-      url: '../my-orderlist/my-orderlist?status=3',
+      url: '../my-orderlist/my-orderlist?status=2',
       icon: '../../img/person/dwc.png',
       id: "003"
     }, 
       {
         name: '待收款',
-        url: '../my-orderlist/my-orderlist?status=4',
+        url: '../my-orderlist/my-orderlist?status=3',
         icon: '../../img/person/dsk.png',
         id: "003"
       }, {
         name: '已完成',
-        url: '../my-orderlist/my-orderlist?status=5',
+        url: '../my-orderlist/my-orderlist?status=4',
         icon: '../../img/person/wan.png',
         id: "003"
       }, {
       name: '待退回',
-        url: '../my-orderlist/my-orderlist?status=3',
+        url: '../my-orderlist/my-orderlist?status=5',
       icon: '../../img/person/dth.png',
       id: "004"
     }, {
       name: '已退回',
-        url: '../my-orderlist/my-orderlist?status=3',
+        url: '../my-orderlist/my-orderlist?status=6',
       icon: '../../img/person/yth.png',
       id: "006"
       },{

@@ -35,7 +35,39 @@ Page({
       }
     })
   },
-
+  cencel_order:function(e){
+    var that=this;
+    var id = e.currentTarget.dataset.orderid;
+    wx.request({
+      url: app.API + "delOrder",
+      data: {
+        id
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function (res) {
+        var newList = that.data.orderList;
+        wx.showToast({
+          title: '取消成功',
+          icon: 'success',
+          duration: 2000
+        })
+        for (var i = 0; i < newList.length; i++) {
+          if (newList[i].id == id) {
+            newList.splice(i, 1);
+          }
+        }
+        that.setData({  //主动刷新
+          orderList: newList
+        })
+      }
+    })
+   
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -47,7 +79,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**
