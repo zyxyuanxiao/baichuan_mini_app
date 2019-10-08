@@ -40,7 +40,6 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: function(res) {
-        console.log(res.data);
         that.setData({
           brandList: res.data
         })
@@ -50,7 +49,7 @@ Page({
   brandTapHandler: function(e) {
     var id = e.target.dataset.bid;
     var that = this;
-    console.log("aaa", id);
+    // console.log("aaa", id);
     wx.request({
       url: app.API + "getListByFirstId",
       data: {
@@ -84,14 +83,16 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: function(res) {
-        console.log(res.data);
+        let data_arry =  new Array;
+        data_arry = res.data;
+        var  f_id = data_arry[0].id;
         that.setData({
           brandList: res.data
         })
         wx.request({
           url: app.API + "getListByFirstId",
           data: {
-            first_id: 1
+            first_id: f_id
           },
           header: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -100,7 +101,7 @@ Page({
           dataType: 'json',
           responseType: 'text',
           success: function(res) {
-            console.log(res.data);
+            // console.log(res.data);
             that.setData({
               productList: res.data
             })

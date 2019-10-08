@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/start/start",
     "pages/welcome/welcome",
     "pages/person/index",
     "pages/products/products",

@@ -1,4 +1,6 @@
+<import src="../../components/search-entry.wxml"></import>
 <view class="main-box">
+  <template is="search-entry" data="{{iconSearch:iconSearch,key:'输入您要搜索的机型'}}"></template>
   <view class="banner">
     <swiper autoplay="true" class="swiper-wrapper" indicatorActiveColor="#fff" indicatorColor="#cda8df" indicatorDots="{{imgUrls.length>1}}" interval="2000">
       <navigator url="{{item.url}}" wx:for="{{imgUrls}}" wx:key="{{index}}">

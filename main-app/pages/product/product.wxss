@@ -80,7 +80,7 @@ page{
   flex-direction: row;
 }
 .shuxing{
-  width: 25%;
+  width: 30%;
   margin-right: 20rpx;
   line-height: 60rpx;
   height: 60rpx;
@@ -90,6 +90,8 @@ page{
   margin-bottom: 20rpx;
   border-radius: 10rpx;
   font-size: 28rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
 }
 .shuxing.shuxings{
   background-color: #3399FF;
