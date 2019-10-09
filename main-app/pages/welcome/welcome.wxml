@@ -11,13 +11,13 @@
     </swiper>
   </view>
   <view class="cate-cols">
-    <button bindtap="bindGetUserInfo" class="cate-col mue-navigator" data-bid="{{item.bid}}" data-cid="{{item.cid}}" hoverClass="mue-active" plain="true" wx:for="{{cateList}}" wx:key="{{index}}">
+    <button bindtap="goProducts" class="cate-col mue-navigator" data-bid="{{item.bid}}" data-cid="{{item.cid}}" hoverClass="mue-active" plain="true" wx:for="{{cateList}}" wx:key="{{index}}">
       <image class="icon" src="{{item.imgSrc}}"></image>
       <view class="text">{{item.text}}</view>
     </button>
   </view>
   <view class="huishou-btn">
-    <button class="button" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">报价查询</button>
+    <button class="button"  bindtap="goProducts">报 价 查 询</button>
   </view>
   <view class="sec recycle-process">
     <view class="sec-title common-padding sub-title">
@@ -25,22 +25,22 @@
     </view>
     <view bindtap="switchPage" class="sec-content" data-url="../recycle/index">
       <view class="grid-cols">
-        <view class="grid-col has-arrow" bindtap="bindGetUserInfo">
+        <view class="grid-col has-arrow" bindtap="goProducts">
           <image class="icon" src="../../img/choose-phone.png"></image>
           <view class="col-text">选择机型</view>
           <image class="arrow-right" src="../../img/arrow_right.svg"></image>
         </view>
-        <view class="grid-col has-arrow" bindtap="bindGetUserInfo">
+        <view class="grid-col has-arrow" bindtap="goProducts">
           <image class="icon" src="../../img/check-price.png"></image>
           <view class="col-text">查询价格</view>
           <image class="arrow-right" src="../../img/arrow_right.svg"></image>
         </view>
-        <view class="grid-col has-arrow" bindtap="bindGetUserInfo">
+        <view class="grid-col has-arrow" bindtap="goProducts">
           <image class="icon" src="../../img/oder-list.png"></image>
           <view class="col-text">填写订单</view>
           <image class="arrow-right" src="../../img/arrow_right.svg"></image>
         </view>
-        <view class="grid-col" bindtap="bindGetUserInfo">
+        <view class="grid-col" bindtap="goProducts">
           <image class="icon" src="../../img/get-money.png"></image>
           <view class="col-text">完成收款</view>
         </view>

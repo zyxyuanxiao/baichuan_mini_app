@@ -1,2 +1,6 @@
 <!--pages/start/start.wxml-->
-<text>pages/start/start.wxml</text>
+<view class="main-box">
+  <view class="txt">为了获取更好的使用体验，请授权登陆</view>
+  <view class="bitn"><button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button></view>
+
+</view>

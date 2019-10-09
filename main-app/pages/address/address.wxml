@@ -1,2 +1,36 @@
-<!--pages/address/address.wxml-->
-<text>pages/address/address.wxml</text>
+<scroll-view class="scroll" scroll-y="true">
+
+  <view>
+
+    <view class="product-name-wrap">
+
+      <view class="ui-list-item-info">{{addressList.userName}}
+
+        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text> {{addressList.telNumber}}
+
+      </view>
+
+      <view class="ui-list-item-address">
+
+        {{addressList.provinceName}}
+
+      </view>
+
+      <view class="ui-list-item-time">
+
+        <p>{{addressList.cityName}}{{addressList.countyName}}{{addressList.detailInfo}}</p>
+
+        <p class="ui-list-item-del" data-id="{{index}}" bindtap="delAddress">删除</p>
+
+      </view>
+
+      <view class="separate"></view>
+
+    </view>
+
+  </view>
+
+</scroll-view>
+<view class="add-address" bindtap="addAddress">
+  <image class="add-img" src="../../images/add.png"></image>新增地址
+</view>

@@ -49,55 +49,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function() {
-    // 查看是否授权
-    // wx.getSetting({
-    //   success(res) {
-    //     if (res.authSetting['scope.userInfo']) {
-    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-    //       wx.getUserInfo({
-    //         success: function(res) {
-    //           console.log(res.userInfo)
-    //           //this.bindGetUserInfo(e);
-    //         }
-    //       })
-    //     }
-    //   }
-    // })
-  },
-  bindGetUserInfo: function(e) {
-    // console.log(e.detail.userInfo);
-    // wx.login({
-    //   success: function(res) {
-    //     console.log(res.code);
-    //     wx.request({
-    //       url: APP.API + 'login',
-    //       method: 'GET',
-    //       data: {
-    //         code: res.code,
-    //         avatar_url: e.detail.userInfo.avatarUrl,
-    //         city: e.detail.userInfo.province
-    //       },
-    //       success: function(res) {
-    //         console.log("后台返回的=====>", res);
-    //         var user_id = res.data.openid;
-    //         wx.setStorageSync("user_id", user_id);
-    //         console.log("user_id", user_id);
-    wx.showLoading({
-      title: '拼命加载中...',
-      success: function() {
-        wx.switchTab({
-          url: '../products/products',
-        })
-      }
-    })
-    setTimeout(function() {
-      wx.hideLoading()
-    }, 1000)
 
-    //       }
-    //     })
-    //   }
-    // })
+  },
+  goProducts: function(e) {
+    wx.switchTab({
+      url: '../products/products',
+    })
   },
   phoneCall: function(e) {
     console.log("aaa", e.currentTarget.dataset.phone);

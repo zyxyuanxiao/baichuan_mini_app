@@ -13,6 +13,19 @@
       </view>
     </view>
   </view>
+  <view class="bc-address">
+    (这是用于您的退货地址)
+    <view class="address-box" bindtap="getAddress">
+      <view class="nei-box">
+        <view class="title"> 收货人：</view>
+        <view class="content">{{addressList.userName}} {{addressList.telNumber}}</view>
+      </view>
+      <view class="nei-box">
+        <view class="title"> 地 址：</view>
+        <view class="content"> {{addressList.provinceName}} {{addressList.cityName}}{{addressList.countyName}}{{addressList.detailInfo}}</view>
+      </view>
+    </view>
+  </view>
   <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
@@ -27,9 +40,9 @@
         <view class="weui-label">物流单号</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" type="password" name="password" bindinput='passwordinput' placeholder="请输入物流单号" />
+        <input class="weui-input" type="text" name="orderlistnum" bindinput='orderlistnuminput' placeholder="请输入物流单号" />
       </view>
     </view>
   </view>
-  <button class="weui-btn weui-btn_mini  bg-blue" type="primary" size="" bindtap='signin'>提交</button>
+  <button class="weui-btn weui-btn_mini  bg-blue" type="primary" size="" bindtap='sumbit'>提交</button>
 </view>

@@ -48,7 +48,7 @@ Page({
         id: "006"
       }, {
         name: '全部订单',
-        url: '../my-orderlist/my-orderlist',
+        url: '../myallorder/myallorder',
         icon: '../../img/person/qbdd.png',
         id: "006"
       }]

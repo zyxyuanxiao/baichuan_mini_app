@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 6,
 			"list": [
 				{
 					"id": 0,
@@ -75,6 +75,27 @@
 					"id": -1,
 					"name": "pages/deliver/deliver",
 					"pathName": "pages/deliver/deliver",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/bind/bind",
+					"pathName": "pages/bind/bind",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/start/start",
+					"pathName": "pages/start/start",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/address/address",
+					"pathName": "pages/address/address",
 					"scene": null
 				}
 			]

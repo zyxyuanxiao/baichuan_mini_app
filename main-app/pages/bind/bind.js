@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tel: "",
+    code: "",
+    openid: "",
+    unionid: "",
+    isValidTel: !1,
+    counter: 0,
+    options: {}
   },
 
   /**
@@ -13,6 +19,15 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  getCode:function(e){
+    
+  },
+
+  handleTel: function (e) {
+    this.setData({
+      phone: e.detail.value
+    })
   },
 
   /**

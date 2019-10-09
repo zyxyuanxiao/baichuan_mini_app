@@ -166,10 +166,11 @@ Page({
         dataType: 'json',
         responseType: 'text',
         success: function (res) {
+          var order_id = res.data.id;
           console.log("下单返回", res)
           if (res.data.code == 1) {
             wx.redirectTo({
-              url: '../order/order',
+              url: '../order/order?orderid='+order_id,
             })
           } else {
             wx.showModal({

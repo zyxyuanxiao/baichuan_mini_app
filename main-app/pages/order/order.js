@@ -15,38 +15,25 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    var openid = wx.getStorageSync("user_id");
-    wx.request({
-      url: app.API + "getUserOrderList",
-      data: {
-        openid,
-        status: 0
-      },
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      method: 'GET',
-      dataType: 'json',
-      responseType: 'text',
-      success: function(res) {
-        console.log("要改变订单",res)
-      },
-      fail: function(res) {},
-      complete: function(res) {},
+  onLoad: function(options) {
+    var order_id = options.orderid;
+    var that = this;
+    that.setData({
+      orderid: order_id
     })
   },
-  goProduct:function(){
+  goProduct: function() {
     wx.switchTab({
       url: '../products/products',
     })
   },
-  goDeliver:function(){
+  goDeliver: function() {
+    var oid = this.data.orderid;
     wx.navigateTo({
-      url: '../deliver/deliver',
+      url: '../deliver/deliver?oid='+ oid,
     })
   },
-  goIndex:function(){
+  goIndex: function() {
     wx.switchTab({
       url: '../welcome/welcome',
     })
@@ -55,7 +42,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
     this.setData({
       countDay: '00',
       countHour: '24',
@@ -67,7 +54,7 @@ Page({
     var totalSecond = 86400 - 1;
 
     // 设置定时器
-    var timeInterval = setInterval(function () {
+    var timeInterval = setInterval(function() {
       // 天
       var day = Math.floor(totalSecond / 3600 / 24);
       if (day < 10) day = '0' + day;
@@ -108,42 +95,42 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })
