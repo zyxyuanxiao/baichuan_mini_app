@@ -42,7 +42,8 @@ Page({
       imgSrc: "../../img/icon-notebook-1.png"
     }],
     curModelInfo: null,
-    commentData: []
+    commentData: [],
+    iconSearch: "../../img/icon-search.svg"
   },
 
   /**
@@ -50,6 +51,14 @@ Page({
    */
   onLoad: function() {
 
+  },
+//点击键盘上的搜索
+  goSearch: function (e) {
+    // console.log(e.detail.value);
+    var keyword = e.detail.value;
+    wx.redirectTo({
+      url: '../search/search?keyword=' + keyword,
+    })
   },
   goProducts: function(e) {
     wx.switchTab({

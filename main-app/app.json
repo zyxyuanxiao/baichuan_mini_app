@@ -1,6 +1,5 @@
 {
   "pages": [
-    
     "pages/welcome/welcome",
     "pages/person/index",
     "pages/products/products",
@@ -11,7 +10,8 @@
     "pages/bind/bind",
     "pages/deliver/deliver",
     "pages/start/start",
-    "pages/myallorder/myallorder"
+    "pages/myallorder/myallorder",
+    "pages/search/search"
   ],
   "window": {
     "navigationBarTextStyle": "black",

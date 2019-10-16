@@ -1,0 +1,42 @@
+/* pages/search/search.wxss */
+@import "../../components/search-entry.wxss";
+.main-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+}
+
+.icon1{
+  width: 35rpx;
+  height: 35rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+.plac-css{
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+.phonelist{
+  width: 100%;
+  height: 70rpx;
+  margin-top: 20rpx;
+}
+.phonename{
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: #ccc 1px dashed;
+  text-align: center;
+  padding-bottom: 10rpx;
+}
+.btn{
+  width: 80%;
+  height: 60rpx;
+  margin: 0 auto;
+  background-color: #3399FF;
+  color: white;
+  text-align: center;
+  border-radius: 5em;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+}

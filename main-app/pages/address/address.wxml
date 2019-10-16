@@ -20,7 +20,7 @@
 
         <p>{{addressList.cityName}}{{addressList.countyName}}{{addressList.detailInfo}}</p>
 
-        <p class="ui-list-item-del" data-id="{{index}}" bindtap="delAddress">删除</p>
+        <!-- <p class="ui-list-item-del" data-id="{{index}}" bindtap="delAddress">删除</p> -->
 
       </view>
 

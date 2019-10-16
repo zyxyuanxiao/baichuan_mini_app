@@ -1,10 +1,10 @@
 <template name="search-entry">
-    <navigator class="search-entry-wrapper" url="../search/index?key={{key}}">
+    <view class="search-entry-wrapper">
         <view class="search-entry">
             <view class="icon-search">
                 <image class="icon" src="{{iconSearch}}"></image>
             </view>
-            <text class="left-text">{{key}}</text>
+            <!-- <text class="left-text">{{key}}</text> -->
         </view>
-    </navigator>
+    </view>
 </template>

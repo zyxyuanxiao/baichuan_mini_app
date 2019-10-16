@@ -3,18 +3,18 @@ Page({
   data: {
     cateList: [{
       classname: "手机",
-      id: "1"
+      id: 1
     }, {
       classname: "平板",
-      id: "2"
+      id: 2
     }, {
       classname: "笔记本",
-      id: "3"
+      id: 3
     }],
-    brandList: [
-      {productList: []}
-    ],
-    cid: "",
+    brandList: [{
+      productList: []
+    }],
+    cid: '',
     bid: "",
     num: 0,
     hasMore: 0,
@@ -23,11 +23,28 @@ Page({
     left: 0,
     iconSearch: "../../img/icon-search.svg"
   },
-  onLoad: function() {},
+  onLoad: function() {
+
+  },
+
+  //点击键盘上的搜索
+  goSearch: function(e) {
+    // console.log(e.detail.value);
+    var keyword = e.detail.value;
+    wx.redirectTo({
+      url: '../search/search?keyword=' + keyword,
+    })
+  },
   cateTapHandler: function(e) {
     var id = e.target.dataset.cid;
+    var arr = ["1", "2", "3"];
+    var crurrnt = false;
+    for (var i = 0; i< arr.length; i++) {
+      if (id == arr[i]) {
+        var cisd = arr[i]
+      }
+    }
     var that = this;
-    console.log("aaa", id);
     wx.request({
       url: app.API + "getListByTypeId",
       data: {
@@ -41,7 +58,8 @@ Page({
       responseType: 'text',
       success: function(res) {
         that.setData({
-          brandList: res.data
+          brandList: res.data,
+          cisd: cisd
         })
       }
     })
@@ -49,7 +67,16 @@ Page({
   brandTapHandler: function(e) {
     var id = e.target.dataset.bid;
     var that = this;
-    // console.log("aaa", id);
+    var arr1 = new Array(100);
+    for (var i = 0; i < arr1.length; i++) {
+      arr1[i] = i;
+    }
+    console.log()
+    for(var a = 0;a< arr1.length;a++){
+      if (id == arr1[a]) {
+        var uuid = arr1[a]
+      }
+    }
     wx.request({
       url: app.API + "getListByFirstId",
       data: {
@@ -64,7 +91,8 @@ Page({
       success: function(res) {
         console.log(res.data);
         that.setData({
-          productList: res.data
+          productList: res.data,
+          uuid: uuid
         })
       }
     })
@@ -83,9 +111,9 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: function(res) {
-        let data_arry =  new Array;
+        let data_arry = new Array;
         data_arry = res.data;
-        var  f_id = data_arry[0].id;
+        var f_id = data_arry[0].id;
         that.setData({
           brandList: res.data
         })

@@ -1,0 +1,18 @@
+<!--pages/search/search.wxml-->
+<view class="main-box">
+  <view class="search-entry-wrapper">
+    <view class="search-entry">
+      <image class="icon1" src="{{iconSearch}}"></image>
+      <input type="text" placeholder='请输入您想要搜索的机型' placeholder-class="plac-css" confirm-type="search" value="{{keyw}}" bindconfirm="goSearch"></input>
+    </view>
+  </view>
+  <view wx:if="{{phoneList!=0}}">
+    <view class="phonelist" wx:for="{{phoneList}}" wx:key>
+      <view class="phonename" bindtap="goProduct" data-id="{{item.id}}" data-name="{{item.second_name}}">{{item.second_name}}</view>
+    </view>
+  </view>
+  <view class="phonelist" wx:else="{{}}">
+    <view class="phonename">暂时没有您要搜索的机型！</view>
+  </view>
+  <view class="btn" bindtap="gowelcome">回到首页</view>
+</view>

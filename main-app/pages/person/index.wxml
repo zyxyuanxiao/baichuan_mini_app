@@ -1,4 +1,7 @@
 <view class='main-box'>
+  <view class="user-box" wx:if="{{alredys==2}}">
+    <button open-type="getUserInfo" class="button" bindgetuserinfo="bindGetUserInfo" wx:if="{{!wxOpenInfo.nickName}}">登录/注册</button>
+  </view>
   <scroll-view class='nav-scroll' scroll-y="true">
     <view class="row">
       <navigator wx:for="{{routers}}" url="{{item.url}}?routersid={{item.id}}" wx:key>
@@ -17,7 +20,7 @@
   </view>
   <view class="communication" bindtap="phoneCall" data-phone="18198575678">
     <image src="../../img/kefu.png"></image>
-    <button class='kefu' >客服电话</button>
+    <button class='kefu'>客服电话</button>
   </view>
 </view>
 <view class="mendian-box">
@@ -27,7 +30,7 @@
     <text class="bot">贵州省贵阳市南明区和丰大厦商城2楼1号</text>
   </view>
   <view class="botton-box">
-  <view class="lianxi" bindtap="phoneCall" data-phone="18198575678">联系门店</view>
+    <view class="lianxi" bindtap="phoneCall" data-phone="18198575678">联系门店</view>
     <view class="lianxi">复制信息</view>
   </view>
 </view>

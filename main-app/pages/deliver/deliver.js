@@ -28,11 +28,10 @@ Page({
   },
   sumbit:function(){
     var ooid = this.data.ordid;
-    var openid = wx.getStorageSync('user_id');
     wx.request({
       url: app.API + "upOrderStatus",
       data: {
-        openid: openid,
+        id: ooid,
         status: 1,
         express_num: this.data.orderlistnum
       },
@@ -41,7 +40,7 @@ Page({
       responseType: 'text',
       success: function (res) {
         console.log("修改订单", res)
-        if (res.data.code == 2) {
+        if (res.data.code == 1) {
           wx.switchTab({
             url: '../person/index',
           })

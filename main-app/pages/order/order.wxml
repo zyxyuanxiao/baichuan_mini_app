@@ -1,5 +1,5 @@
 <!--pages/order/order.wxml-->
-<view class="main-box">
+<view class="main-box" wx:for="{{orderinfo}}" wx:key>
   <view class="header">
     <text class="daifahuo">待发货</text>
     <text class="des">为了售出高价，请您尽快发货哦！</text>
@@ -7,12 +7,12 @@
   </view>
   <view class="info-box">
     <view class="order-sum">
-      <!-- <text class="order-title">下单数量</text>
-      <text class="sum-price">1个</text> -->
+      <text class="order-title">下单数量</text>
+      <text class="sum-price">{{counts}}</text>
     </view>
     <view class="order-sum">
-      <!-- <text class="order-title">总底价</text>
-      <text class="sum-price">10000.00元</text> -->
+      <text class="order-title">总底价</text>
+      <text class="sum-price">{{price_total}}元</text>
     </view>
     <view class="adds" bindtap="goProduct">继续添加</view>
   </view>
@@ -20,18 +20,18 @@
     <text class="descc">为了售出高价，请尽快发货！</text>
     <view class="now" bindtap="goDeliver">立即发货</view>
   </view>
-  <!-- <view class="phone-attr">
-    <view class="phone_name">苹果 iPhone XSMAX 靓机 256G 大陆行 保修60天以上 金</view>
+  <view class="phone-attr">
+    <view class="phone_name">{{item.second_name}}{{item.param}}</view>
     <view class="phone-add">
-      <view class="phone-price">￥6422.00</view>
+      <view class="phone-price">￥{{item.price}}</view>
       <view class="addPhone">
-        <view class="icon">-</view>
-        <view class="count">2</view>
-        <view class="icon">+</view>
+        <view class="icon" bindtap="reducegoodscount">-</view>
+        <view class="count">{{counts}}</view>
+        <view class="icon" bindtap="addgoodscount">+</view>
       </view>
-      <view class="del">删除</view>
+      <view class="del" bindtap="del">删除</view>
     </view>
-  </view> -->
+  </view>
 </view>
 <view class="bottom-btn">
   <button bindtap="goIndex">稍后发货</button>

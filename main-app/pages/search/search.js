@@ -1,49 +1,56 @@
-// pages/start/start.js
-const APP = getApp();
+// pages/search/search.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    iconSearch: "../../img/icon-search.svg",
+    keyw:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    
-  },
-  bindGetUserInfo(e) {
-    console.log(e.detail.userInfo)
-    wx.login({
+    var keyw = options.keyword;
+    var that =this;
+    that.setData({
+      keyw:keyw
+    })
+    wx.request({
+      url: app.API + "searchIdAndName",
+      data: {
+        second_name: keyw,
+        start: 0,
+        size: 100
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
       success: function(res) {
-        console.log(res.code);
-        wx.request({
-          url: APP.API + 'login',
-          method: 'GET',
-          data: {
-            code: res.code,
-            avatar_url: e.detail.userInfo.avatarUrl,
-            city: e.detail.userInfo.province
-          },
-          success: function(res) {
-            console.log("后台返回的=====>", res);
-            var user_id = res.data.openid;
-            wx.setStorageSync("user_id", user_id);
-            console.log("user_id", user_id);
-            wx.switchTab({
-              url: '../welcome/welcome',
-            })
-          }
+        console.log("查询结果",res)
+        that.setData({
+          phoneList: res.data
         })
       }
     })
   },
-  nowant:function(){
+  gowelcome:function(){
+    wx.switchTab({
+      url: '../welcome/welcome',
+    })
+  },
+  goProduct:function(e) {
+    var id = e.currentTarget.dataset.id;
+    var name = e.currentTarget.dataset.name;
+    console.log("二级id",id);
     wx.navigateTo({
-      url: '../person/index',
+      url: '../product/product?id=' + id  + '&name=' + name ,
     })
   },
   /**

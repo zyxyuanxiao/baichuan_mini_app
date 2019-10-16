@@ -62,6 +62,7 @@ page {
 .sum-price {
   margin-top: 35rpx;
   font-size: 30rpx;
+  margin-left: 20rpx;
 }
 
 .adds {
@@ -133,7 +134,7 @@ page {
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding-top: 20rpx;
+  padding-top: 30rpx;
 }
 
 .icon {

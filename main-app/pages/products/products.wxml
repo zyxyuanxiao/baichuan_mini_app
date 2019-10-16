@@ -1,9 +1,13 @@
-<import src="../../components/search-entry.wxml"></import>
 <view class="main-box">
-  <template is="search-entry" data="{{iconSearch:iconSearch,key:'输入您要搜索的机型'}}"></template>
+  <view class="search-entry-wrapper">
+    <view class="search-entry">
+      <image class="icon1" src="{{iconSearch}}"></image>
+      <input type="text" placeholder='请输入您想要搜索的机型' placeholder-class="plac-css" confirm-type="search" bindconfirm="goSearch"></input>
+    </view>
+  </view>
   <view class="category-wrapper">
     <scroll-view class="cate-cols" scrollWithAnimation="true" scrollX="true">
-      <view bindtap="cateTapHandler" class="cate-col{{1==cid?' current':''}}" data-cid="{{item.id}}" data-index="{{index}}" wx:for="{{cateList}}" wx:key="{{index}}">{{item.classname}}
+      <view bindtap="cateTapHandler" class="cate-col{{item.id==cisd?' current':''}}" data-cid="{{item.id}}" data-index="{{index}}" wx:for="{{cateList}}" wx:key="{{index}}">{{item.classname}}
       </view>
     </scroll-view>
     <view class="line" style="left:{{left}};"></view>
@@ -11,7 +15,7 @@
   <view class="content-wrapper">
     <view class="brand-cols-wrapper">
       <scroll-view class="brand-cols" scrollTop="{{brandScrollTop}}" scrollY="true">
-        <view bindtap="brandTapHandler" class="brand-col text-overflow{{item.id==bid?' current':''}}" data-bid="{{item.id}}" wx:for="{{brandList}}" wx:key="{{index}}">{{item.first_name}}
+        <view bindtap="brandTapHandler" class="brand-col{{item.id==uuid?' current':''}}" data-bid="{{item.id}}" wx:for="{{brandList}}" wx:key="{{index}}">{{item.first_name}}
         </view>
       </scroll-view>
     </view>

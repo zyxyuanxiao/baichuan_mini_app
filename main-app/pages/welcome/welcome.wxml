@@ -1,6 +1,10 @@
-<import src="../../components/search-entry.wxml"></import>
 <view class="main-box">
-  <template is="search-entry" data="{{iconSearch:iconSearch,key:'输入您要搜索的机型'}}"></template>
+  <view class="search-entry-wrapper">
+    <view class="search-entry">
+        <image class="icon1" src="{{iconSearch}}"></image>
+        <input type="text" placeholder='请输入您想要搜索的机型' placeholder-class="plac-css" confirm-type="search" bindconfirm="goSearch"></input>
+    </view>
+  </view>
   <view class="banner">
     <swiper autoplay="true" class="swiper-wrapper" indicatorActiveColor="#fff" indicatorColor="#cda8df" indicatorDots="{{imgUrls.length>1}}" interval="2000">
       <navigator url="{{item.url}}" wx:for="{{imgUrls}}" wx:key="{{index}}">
@@ -17,7 +21,7 @@
     </button>
   </view>
   <view class="huishou-btn">
-    <button class="button"  bindtap="goProducts">报 价 查 询</button>
+    <button class="button" bindtap="goProducts">报 价 查 询</button>
   </view>
   <view class="sec recycle-process">
     <view class="sec-title common-padding sub-title">
@@ -55,11 +59,15 @@
       <view class="grid-colb grid-cols-2">
         <view class="grid-col-phone">
           <image class="icon" src="../../img/hezuo.jpg"></image>
-          <view class="col-texta" bindtap="phoneCall" data-phone="18198575678"> 回收客服热线：<text class="phone--text">181-9857-5678</text></view>
+          <view class="col-texta" bindtap="phoneCall" data-phone="18198575678"> 回收客服热线：
+            <text class="phone--text">181-9857-5678</text>
+          </view>
         </view>
         <view class="grid-col-phone">
           <image class="icon" src="../../img/hezuo.jpg"></image>
-          <view class="col-texta" bindtap="phoneCall" data-phone="18198576789"> 销售客服热线：<text class="phone--text">181-9857-6789</text></view>
+          <view class="col-texta" bindtap="phoneCall" data-phone="18198576789"> 销售客服热线：
+            <text class="phone--text">181-9857-6789</text>
+          </view>
         </view>
       </view>
     </view>
@@ -72,12 +80,16 @@
       <view class="grid-colb grid-cols-2">
         <view class="grid-col">
           <image class="icon" src="../../img/back_phone.jpg"></image>
-          <view class="col-text"><text class="phone--texta">渠道合作 顺丰包邮 当天回款 互利共赢</text></view>
+          <view class="col-text">
+            <text class="phone--texta">渠道合作 顺丰包邮 当天回款 互利共赢</text>
+          </view>
           <!-- <view class="col-text"></view> -->
         </view>
         <view class="grid-col">
           <image class="icon" src="../../img/back_phone.jpg"></image>
-          <view class="col-text"><text class="phone--texta">战略合作 平台对接 自动改价 垄断市场</text></view>
+          <view class="col-text">
+            <text class="phone--texta">战略合作 平台对接 自动改价 垄断市场</text>
+          </view>
           <!-- <view class="col-text"></view> -->
         </view>
       </view>
