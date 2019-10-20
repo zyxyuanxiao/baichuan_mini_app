@@ -102,7 +102,8 @@ Page({
             console.log("后台返回的=====>", res);
             var user_id = res.data.openid;
             wx.setStorageSync("user_id", user_id);
-            console.log("user_id", user_id);
+            //wx.setStorageSync("phone_", data)
+            //console.log("user_id", user_id);
             var sue = 1;
             that.setData({
               alredys: sue

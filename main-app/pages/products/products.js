@@ -24,7 +24,23 @@ Page({
     iconSearch: "../../img/icon-search.svg"
   },
   onLoad: function() {
-
+    var openid = wx.getStorageSync("user_id");
+    wx.request({
+      url: app.API + 'isBindPhone',
+      method: 'GET',
+      data: {
+        openid: openid
+      },
+      success: function (res) {
+        if(res.data==0){
+          wx.redirectTo({
+            url: '../bind/bind',
+          })
+        } else{
+          console.log("已绑定手机号！")
+        }
+      }
+    })
   },
 
   //点击键盘上的搜索
