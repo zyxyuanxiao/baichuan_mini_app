@@ -6,9 +6,9 @@
         </view>
         <view class="input-wrapper code-wrapper">
             <input bindinput="handleCode" class="mue-input" maxlength="6" placeholder="请输入验证码" placeholderStyle="color: #cacee0; font-size: 26rpx" type="number" value="{{code}}"></input>
-            <button bindtap="getCode" class="button-code">{{codename}}</button>
+            <button bindtap="getCode" class="button-code" disabled="{{disabled}}">{{codename}}</button>
         </view>
-        <button bindtap="submit" class="button mue-button mue-button-primary" disabled="{{!isValidTel||code.length<6}}">提交</button>
+        <button bindtap="submit" class="button mue-button mue-button-primary">提交</button>
     </view>
     <image class="bottom-bg" src="../../img/bind/bg.png"></image>
 </view>
