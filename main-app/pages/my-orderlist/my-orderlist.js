@@ -30,7 +30,8 @@ Page({
       success: function (res) {
         console.log("返回的订单", res.data);
         that.setData({
-          orderList: res.data
+          orderList: res.data,
+          cencel_btn:options.status
         })
       }
     })

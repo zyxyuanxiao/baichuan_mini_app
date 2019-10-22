@@ -96,10 +96,14 @@ Page({
       method: 'GET',
       dataType: 'json',
       success: function(res) {
-        console.log("huhuhu",res);
         if (res.data.code == 0) {
-          wx.redirectTo({
-            url: '../products/products',
+          wx.showToast({
+            title: '绑定成功',
+            icon: 'none',
+            duration: 1000
+          })
+          wx.switchTab({
+            url:  '../products/products',
           })
         } else{
           wx.showToast({

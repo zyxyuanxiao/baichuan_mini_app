@@ -7,7 +7,8 @@ Page({
    */
   data: {
     iconSearch: "../../img/icon-search.svg",
-    keyw:''
+    keyw:'',
+    isValidTel:!1
   },
 
   /**
@@ -34,6 +35,29 @@ Page({
       responseType: 'text',
       success: function(res) {
         console.log("查询结果",res)
+        that.setData({
+          phoneList: res.data
+        })
+      }
+    })
+  },
+  getKeyw:function(e){
+    var that = this;
+    wx.request({
+      url: app.API + "searchIdAndName",
+      data: {
+        second_name: e.detail.value,
+        start: 0,
+        size: 100
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function (res) {
+        console.log("查询结果", res)
         that.setData({
           phoneList: res.data
         })

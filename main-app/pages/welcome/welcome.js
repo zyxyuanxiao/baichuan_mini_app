@@ -15,16 +15,16 @@ Page({
         phoneNo: '18198576789'
       }
     ],
-    imgUrls: [{
-        url: "../couponget/index",
-        src: "../../img/activie.png"
-      },
-      {
-        url: "../couponget/index",
-        src: "../../img/banner.png"
+    // imgUrls: [{
+    //     url: "../couponget/index",
+    //     src: "../../img/activie.png"
+    //   },
+    //   {
+    //     url: "../couponget/index",
+    //     src: "../../img/banner.png"
 
-      }
-    ],
+    //   }
+    // ],
     cateList: [{
       cid: 1,
       bid: -1,
@@ -50,10 +50,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function() {
+    var that = this;
+    wx.request({
+      url: APP.API + 'getInfoList',
+      method: 'GET',
+      data: {
+        types: 1,
+        start: 0,
+        size: 100
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'GET',
+      dataType: 'json',
+      success: function(res) {
+        var imgs = res.data;
+        console.log("===>", imgs)
+        var httpss = "https://www.bckj.store";
+        for (var i = 0; imgs.length > i; i++) {
+          imgs[i]["http"] = httpss
 
+        }
+        that.setData({
+          imgs: imgs
+        })
+      }
+    })
   },
-//点击键盘上的搜索
-  goSearch: function (e) {
+  //点击键盘上的搜索
+  goSearch: function(e) {
     // console.log(e.detail.value);
     var keyword = e.detail.value;
     wx.redirectTo({

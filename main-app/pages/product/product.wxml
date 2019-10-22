@@ -25,6 +25,7 @@
   </view>
   <view class="baojia-box">
     <view class="title">回收报价</view>
+    <view class="comments">{{comments}}</view>
     <view class="baojia" wx:for="{{baojiaList}}">
       <view class="money">{{item.sta_name}} <text class="price--text">{{item.price}}</text> </view>
       <view class='input-box'>
@@ -39,7 +40,7 @@
   </view>
 </view>
 <view class="bottom-box">
-  <view class="go-home">
+  <view class="go-home" bindtap="goHome">
     <image src="../../img/icon_home_black_60.png"></image>
   </view>
   <view class="order-btn">

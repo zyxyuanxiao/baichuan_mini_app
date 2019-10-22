@@ -14,6 +14,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    var status = 1;  //为了不让取消按钮显示
     var openid = wx.getStorageSync('user_id');
     console.log("全部订单", openid);
     wx.request({
@@ -30,7 +31,8 @@ Page({
       success: function (res) {
         console.log("返回的订单", res.data);
         that.setData({
-          orderList: res.data
+          orderList: res.data,
+          status: status
         })
       }
     })

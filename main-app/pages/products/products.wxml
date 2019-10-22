@@ -21,7 +21,7 @@
     </view>
     <view class="product-cols-wrapper">
       <scroll-view bindscrolltolower="loadMoreProduct" class="product-cols" scrollTop="{{productScrollTop}}" scrollY="true">
-        <navigator class="product-col" url="../product/product?id={{item.id}}&name={{item.second_name}}" wx:for="{{productList}}" wx:key="{{index}}">
+        <navigator class="product-col" url="../product/product?id={{item.id}}&name={{item.second_name}}&comments={{item.comments}}" wx:for="{{productList}}" wx:key="{{index}}">
           <!-- <view class="sort-number fore{{index+1}}">{{index+1}}</view> -->
           <view class="product-name text-overflow">{{item.second_name}}</view>
         </navigator>

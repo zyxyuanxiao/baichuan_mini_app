@@ -3,7 +3,7 @@
   <view class="search-entry-wrapper">
     <view class="search-entry">
       <image class="icon1" src="{{iconSearch}}"></image>
-      <input type="text" placeholder='请输入您想要搜索的机型' placeholder-class="plac-css" confirm-type="search" value="{{keyw}}" bindconfirm="goSearch"></input>
+      <input type="text" placeholder='请输入您想要搜索的机型' placeholder-class="plac-css" bindinput="getKeyw"  focus="{{!isValidTel}}" confirm-type="search" value="{{keyw}}" bindconfirm="goSearch"></input>
     </view>
   </view>
   <view wx:if="{{phoneList!=0}}">

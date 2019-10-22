@@ -1,17 +1,17 @@
 <view class="main-box">
   <view class="search-entry-wrapper">
     <view class="search-entry">
-        <image class="icon1" src="{{iconSearch}}"></image>
-        <input type="text" placeholder='请输入您想要搜索的机型' placeholder-class="plac-css" confirm-type="search" bindconfirm="goSearch"></input>
+      <image class="icon1" src="{{iconSearch}}"></image>
+      <input type="text" placeholder='请输入您想要搜索的机型' placeholder-class="plac-css" confirm-type="search" bindconfirm="goSearch"></input>
     </view>
   </view>
   <view class="banner">
-    <swiper autoplay="true" class="swiper-wrapper" indicatorActiveColor="#fff" indicatorColor="#cda8df" indicatorDots="{{imgUrls.length>1}}" interval="2000">
-      <navigator url="{{item.url}}" wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper autoplay="true" class="swiper-wrapper" indicatorActiveColor="#fff" indicatorColor="#cda8df" indicatorDots="{{imgUrls.length>1}}" interval="3000">
+      <block wx:for="{{imgs}}" wx:key="{{index}}">
         <swiper-item>
-          <image class="slide-image" mode="aspectFill" src="{{item.src}}"></image>
+          <image class="slide-image" mode="aspectFill" src="{{item.http+item.img_url}}"></image>
         </swiper-item>
-      </navigator>
+      </block>
     </swiper>
   </view>
   <view class="cate-cols">

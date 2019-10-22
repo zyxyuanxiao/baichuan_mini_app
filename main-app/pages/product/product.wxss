@@ -188,3 +188,10 @@ radio-group{
 .price--text{
   color: red;
 }
+.comments{
+  width: 90%;
+  text-align: left;
+  margin: 0 auto;
+  font-size: 28rpx;
+  padding-top: 10rpx;
+}

@@ -22,6 +22,7 @@ Page({
   onLoad: function (options) {
     var second_id = options.id;
     var second_name = options.name;
+    var comments = options.comments;
     wx.setStorageSync("second_id", options.id)
     console.log(second_id, second_name)
     var that = this;
@@ -40,12 +41,18 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: function (res) {
-        console.log("参数数组", res.data);
+        console.log("参数数组", res);
         that.setData({
           attributeList: res.data,
-          phoneName: second_name
+          phoneName: second_name,
+          comments: comments
         })
       }
+    })
+  },
+  goHome:function(){
+    wx.switchTab({
+      url: '../welcome/welcome',
     })
   },
  
@@ -180,8 +187,7 @@ Page({
           }
         }
       })
-    }
-   
+    } 
   },
 
 
