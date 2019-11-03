@@ -1,6 +1,6 @@
 <view class='main-box'>
   <view class="user-box" wx:if="{{alredys==2}}">
-    <button open-type="getUserInfo" class="button" bindgetuserinfo="bindGetUserInfo" wx:if="{{!wxOpenInfo.nickName}}">登录/注册</button>
+    <button open-type="getUserInfo" class="button" bindgetuserinfo="bindGetUserInfo" wx:if="{{!wxOpenInfo.nickName}}">请先登陆</button>
   </view>
   <scroll-view class='nav-scroll' scroll-y="true">
     <view class="row">

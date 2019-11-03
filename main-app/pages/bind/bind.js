@@ -50,7 +50,7 @@ Page({
         dataType: 'json',
         success: function(res) {
           console.log("发送号码",res)
-          var num = 61;
+          var num = 121;
           var timer = setInterval(function() {
             num--;
             if (num <= 0) {

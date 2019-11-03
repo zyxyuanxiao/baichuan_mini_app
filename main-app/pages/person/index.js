@@ -61,28 +61,28 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    wx.getSetting({
-      success(res) {
-        console.log('aa', res)
-        if (res.authSetting['scope.userInfo']) {
-          var alredys = 1;
-          that.setData({
-            alredys: alredys
-          })
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function(res) {
-              console.log(res);
-            }
-          })
-        } else {
-          alredys = 2;
-          that.setData({
-            alredys: alredys
-          })
+      wx.getSetting({
+        success(res) {
+          console.log('aa', res)
+          if (res.authSetting['scope.userInfo']) {
+            var alredys = 1;
+            that.setData({
+              alredys: alredys
+            })
+            // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+            wx.getUserInfo({
+              success: function(res) {
+                console.log(res);
+              }
+            })
+          } else {
+            alredys = 2;
+            that.setData({
+              alredys: alredys
+            })
+          }
         }
-      }
-    })
+      })
   },
   bindGetUserInfo(e) {
     var that = this;

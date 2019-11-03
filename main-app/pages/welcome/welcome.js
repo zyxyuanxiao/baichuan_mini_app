@@ -80,10 +80,8 @@ Page({
   },
   //点击键盘上的搜索
   goSearch: function(e) {
-    // console.log(e.detail.value);
-    var keyword = e.detail.value;
     wx.redirectTo({
-      url: '../search/search?keyword=' + keyword,
+      url: '../search/search',
     })
   },
   goProducts: function(e) {

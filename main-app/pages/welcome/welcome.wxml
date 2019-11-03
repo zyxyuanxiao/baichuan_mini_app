@@ -1,8 +1,8 @@
 <view class="main-box">
   <view class="search-entry-wrapper">
-    <view class="search-entry">
+    <view class="search-entry" bindtap="goSearch" >
       <image class="icon1" src="{{iconSearch}}"></image>
-      <input type="text" placeholder='请输入您想要搜索的机型' placeholder-class="plac-css" confirm-type="search" bindconfirm="goSearch"></input>
+      <input type="text" disabled="ture" placeholder='请输入您想要搜索的机型' placeholder-class="plac-css"></input>
     </view>
   </view>
   <view class="banner">

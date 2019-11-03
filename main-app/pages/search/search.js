@@ -15,31 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var keyw = options.keyword;
-    var that =this;
-    that.setData({
-      keyw:keyw
-    })
-    wx.request({
-      url: app.API + "searchIdAndName",
-      data: {
-        second_name: keyw,
-        start: 0,
-        size: 100
-      },
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      method: 'GET',
-      dataType: 'json',
-      responseType: 'text',
-      success: function(res) {
-        console.log("查询结果",res)
-        that.setData({
-          phoneList: res.data
-        })
-      }
-    })
+    
   },
   getKeyw:function(e){
     var that = this;

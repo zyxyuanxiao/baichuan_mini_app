@@ -24,38 +24,26 @@ Page({
     iconSearch: "../../img/icon-search.svg"
   },
   onLoad: function() {
-    var openid = wx.getStorageSync("user_id");
-    wx.request({
-      url: app.API + 'isBindPhone',
-      method: 'GET',
-      data: {
-        openid: openid
-      },
-      success: function (res) {
-        if(res.data==0){
-          wx.redirectTo({
-            url: '../bind/bind',
-          })
-        } else{
-          console.log("已绑定手机号！")
-        }
-      }
-    })
+    // var openid = wx.getStorageSync("user_id");
+    // if (openid == "") {
+    //   wx.switchTab({
+    //     url: '../person/index',
+    //   })
+    // }
   },
 
   //点击键盘上的搜索
   goSearch: function(e) {
     // console.log(e.detail.value);
-    var keyword = e.detail.value;
     wx.redirectTo({
-      url: '../search/search?keyword=' + keyword,
+      url: '../search/search',
     })
   },
   cateTapHandler: function(e) {
     var id = e.target.dataset.cid;
     var arr = ["1", "2", "3"];
     var crurrnt = false;
-    for (var i = 0; i< arr.length; i++) {
+    for (var i = 0; i < arr.length; i++) {
       if (id == arr[i]) {
         var cisd = arr[i]
       }
@@ -88,7 +76,7 @@ Page({
       arr1[i] = i;
     }
     console.log()
-    for(var a = 0;a< arr1.length;a++){
+    for (var a = 0; a < arr1.length; a++) {
       if (id == arr1[a]) {
         var uuid = arr1[a]
       }
@@ -105,7 +93,7 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: function(res) {
-        console.log("===>",res.data);
+        console.log("===>", res.data);
         that.setData({
           productList: res.data,
           uuid: uuid
@@ -115,48 +103,70 @@ Page({
   },
   onShow: function() {
     var that = this;
-    wx.request({
-      url: app.API + "getListByTypeId",
-      data: {
-        type_id: 1
-      },
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      method: 'GET',
-      dataType: 'json',
-      responseType: 'text',
-      success: function(res) {
-        let data_arry = new Array;
-        data_arry = res.data;
-        var f_id = data_arry[0].id;
-        that.setData({
-          brandList: res.data
-        })
-        wx.request({
-          url: app.API + "getListByFirstId",
-          data: {
-            first_id: f_id
-          },
-          header: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          method: 'GET',
-          dataType: 'json',
-          responseType: 'text',
-          success: function(res) {
-            // console.log(res.data);
-            that.setData({
-              productList: res.data
+    var openid = wx.getStorageSync("user_id");
+    if (openid == "") {
+      wx.switchTab({
+        url: "../person/index",
+      })
+    } else if (openid != "") {
+      wx.request({
+        url: app.API + 'isBindPhone',
+        method: 'GET',
+        data: {
+          openid: openid
+        },
+        success: function(res) {
+          if (res.data == 0) {
+            wx.redirectTo({
+              url: '../bind/bind',
             })
-          },
-          fail: function(res) {},
-          complete: function(res) {},
-        })
-      },
-      fail: function(res) {},
-      complete: function(res) {},
-    })
+          } else {
+            wx.request({
+              url: app.API + "getListByTypeId",
+              data: {
+                type_id: 1
+              },
+              header: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              method: 'GET',
+              dataType: 'json',
+              responseType: 'text',
+              success: function(res) {
+                let data_arry = new Array;
+                data_arry = res.data;
+                var f_id = data_arry[0].id;
+                that.setData({
+                  brandList: res.data
+                })
+                wx.request({
+                  url: app.API + "getListByFirstId",
+                  data: {
+                    first_id: f_id
+                  },
+                  header: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                  },
+                  method: 'GET',
+                  dataType: 'json',
+                  responseType: 'text',
+                  success: function(res) {
+                    // console.log(res.data);
+                    that.setData({
+                      productList: res.data
+                    })
+                  },
+                  fail: function(res) {},
+                  complete: function(res) {},
+                })
+              },
+              fail: function(res) {},
+              complete: function(res) {},
+            })
+          }
+        }
+      })
+    }
   },
   onShareAppMessage: function(t) {}
 });
