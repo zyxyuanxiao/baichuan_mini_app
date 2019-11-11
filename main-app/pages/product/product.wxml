@@ -26,7 +26,7 @@
   <view class="baojia-box">
     <view class="title">回收报价</view>
     <view class="comments">{{comments}}</view>
-    <view class="baojia" wx:for="{{baojiaList}}">
+    <view class="baojia" wx:for="{{baojiaList}}" wx:key="{{item.id}}">
       <view class="money">{{item.sta_name}} <text class="price--text">{{item.price}}</text> </view>
       <view class='input-box'>
         <view class="biaozhun-text">报价标准</view>

@@ -78,10 +78,11 @@ page{
   border-left: 1rpx #3399FF solid;
   display: flex;
   flex-direction: row;
+  flex-wrap:wrap;
 }
 .shuxing{
   width: 30%;
-  margin-right: 20rpx;
+  margin-right: 10rpx;
   line-height: 60rpx;
   height: 60rpx;
   border: 1px #3399FF solid;
@@ -90,8 +91,8 @@ page{
   margin-bottom: 20rpx;
   border-radius: 10rpx;
   font-size: 28rpx;
-  padding-left: 20rpx;
-  padding-right: 20rpx;
+  /* padding-left: 20rpx;
+  padding-right: 20rpx; */
 }
 .shuxing.shuxings{
   background-color: #3399FF;

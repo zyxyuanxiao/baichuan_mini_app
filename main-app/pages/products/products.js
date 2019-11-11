@@ -1,6 +1,8 @@
 const app = getApp()
 Page({
   data: {
+    cisd: 1,
+    uuid:7,
     cateList: [{
       classname: "手机",
       id: 1
@@ -24,12 +26,48 @@ Page({
     iconSearch: "../../img/icon-search.svg"
   },
   onLoad: function() {
-    // var openid = wx.getStorageSync("user_id");
-    // if (openid == "") {
-    //   wx.switchTab({
-    //     url: '../person/index',
-    //   })
-    // }
+    var that = this;
+
+    wx.request({
+      url: app.API + "getListByTypeId",
+      data: {
+        type_id: 1
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res) {
+        let data_arry = new Array;
+        data_arry = res.data;
+        var f_id = data_arry[0].id;
+        that.setData({
+          brandList: res.data
+        })
+        wx.request({
+          url: app.API + "getListByFirstId",
+          data: {
+            first_id: f_id
+          },
+          header: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          method: 'GET',
+          dataType: 'json',
+          responseType: 'text',
+          success: function(res) {
+            // console.log(res.data);
+            that.setData({
+              productList: res.data
+            })
+          },
+        })
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
 
   //点击键盘上的搜索
@@ -61,9 +99,30 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: function(res) {
+        let data_arry = new Array;
+        data_arry = res.data;
+        var f_id = data_arry[0].id;
         that.setData({
           brandList: res.data,
           cisd: cisd
+        })
+        wx.request({
+          url: app.API + "getListByFirstId",
+          data: {
+            first_id: f_id
+          },
+          header: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          method: 'GET',
+          dataType: 'json',
+          responseType: 'text',
+          success: function (res) {
+            // console.log(res.data);
+            that.setData({
+              productList: res.data
+            })
+          },
         })
       }
     })
@@ -75,11 +134,11 @@ Page({
     for (var i = 0; i < arr1.length; i++) {
       arr1[i] = i;
     }
-    console.log()
     for (var a = 0; a < arr1.length; a++) {
       if (id == arr1[a]) {
         var uuid = arr1[a]
       }
+      console.log(id == arr1[a])
     }
     wx.request({
       url: app.API + "getListByFirstId",
@@ -102,13 +161,12 @@ Page({
     })
   },
   onShow: function() {
-    var that = this;
     var openid = wx.getStorageSync("user_id");
     if (openid == "") {
       wx.switchTab({
         url: "../person/index",
       })
-    } else if (openid != "") {
+    } else {
       wx.request({
         url: app.API + 'isBindPhone',
         method: 'GET',
@@ -119,49 +177,6 @@ Page({
           if (res.data == 0) {
             wx.redirectTo({
               url: '../bind/bind',
-            })
-          } else {
-            wx.request({
-              url: app.API + "getListByTypeId",
-              data: {
-                type_id: 1
-              },
-              header: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-              },
-              method: 'GET',
-              dataType: 'json',
-              responseType: 'text',
-              success: function(res) {
-                let data_arry = new Array;
-                data_arry = res.data;
-                var f_id = data_arry[0].id;
-                that.setData({
-                  brandList: res.data
-                })
-                wx.request({
-                  url: app.API + "getListByFirstId",
-                  data: {
-                    first_id: f_id
-                  },
-                  header: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                  },
-                  method: 'GET',
-                  dataType: 'json',
-                  responseType: 'text',
-                  success: function(res) {
-                    // console.log(res.data);
-                    that.setData({
-                      productList: res.data
-                    })
-                  },
-                  fail: function(res) {},
-                  complete: function(res) {},
-                })
-              },
-              fail: function(res) {},
-              complete: function(res) {},
             })
           }
         }

@@ -24,7 +24,6 @@ Page({
     var second_name = options.name;
     var comments = options.comments;
     wx.setStorageSync("second_id", options.id)
-    console.log(second_id, second_name)
     var that = this;
     that.setData({
       second_id: second_id
@@ -41,7 +40,6 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: function (res) {
-        console.log("参数数组", res);
         that.setData({
           attributeList: res.data,
           phoneName: second_name,
@@ -57,17 +55,14 @@ Page({
   },
  
   chooseSx: function (e) {
-    let FiledArr = []
+    let FiledArr = [];
     // 暂存指针
     let that = this;
     // 解构
     let { attributeList, searchModel } = this.data
-    console.log(searchModel)
 
     // 解构
     let { item, id, attrid, boxindex, detailindex } = e.currentTarget.dataset
-    console.log(item, id, attrid, boxindex, detailindex)
-
     f[attrid] = id
 
     // 赋值字段名称
@@ -82,7 +77,6 @@ Page({
     })
     // 参数存储
     let serachModelSave = `searchModel[${boxindex}]`
-
     // 打开当前高亮
     that.setData({
       [setDataFiled]: true,
@@ -93,8 +87,8 @@ Page({
 
     searchModel.forEach(el => {
       searchModelArr.push(el)
-
     })
+    console.log("aaa", f)
     // 发送请求
     if (searchModelArr.length == attributeList.length) {
       var tempArr = [];
@@ -108,7 +102,6 @@ Page({
 
     }
     //searchModelArr.length == attributeList.length && this.queryMoney();
-    console.log("boxindex的值", boxindex + 1);
   },
   // 请求金额
   queryMoney(e) {
@@ -120,6 +113,7 @@ Page({
 
     var that = this;
     var filter = that.data.filter;
+
     console.log("filter",filter);
     wx.request({
       url: app.API + "getAssess",
@@ -154,7 +148,6 @@ Page({
     var user_id = wx.getStorageSync("user_id");
     var second_id = wx.getStorageSync("second_id");
     var assess_id = wx.getStorageSync("assess_id");   //这里不应该用缓存，后期会改进
-    console.log("要提交的", user_id, second_id, assess_id);
     if (assess_id===""){
       wx.showModal({
         title: "信息提示",
@@ -202,7 +195,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    f=[];
   },
 
   /**

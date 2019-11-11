@@ -28,13 +28,6 @@ Page({
     var that = this;
     var phone = that.data.phone;
     var openid = wx.getStorageSync("user_id");
-    if (!(/^(14[0-9]|13[0-9]|15[0-9]|17[0-9]|18[0-9])\d{8}$$/).test(phone)) {
-      wx.showToast({
-        title: '请输入正确的手机号',
-        icon: 'none',
-        duration: 1000
-      })
-    } else {
       wx.request({
         url: app.API + 'bindPhone',
         method: 'GET',
@@ -69,7 +62,6 @@ Page({
           }, 1000)
         }
       })
-    }
   },
   handleCode: function(e) {
     this.setData({
