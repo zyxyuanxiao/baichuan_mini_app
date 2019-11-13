@@ -13,6 +13,7 @@
     <view class="order-time">下单时间：{{item.orderTime}}</view>
     <view class="order-sum">
       <view class="total">合计：{{item.price}}（共计{{item.goods_count}}件）</view>
+       <view class="cenlce" wx:if="{{cencel_btn==0||cencel_btn==''}}" bindtap="toDeliver" data-oid="{{item.id}}" style="margin-right:10px;">发货</view>
       <view class="cenlce" wx:if="{{cencel_btn==0||cencel_btn==''}}" bindtap="cencel_order" data-orderid="{{item.id}}">取消</view>
     </view>
   </view>

@@ -69,6 +69,13 @@ Page({
     })
    
   },
+
+  toDeliver:function(e){
+    console.log("===>", e.currentTarget.dataset.oid)
+    wx.navigateTo({
+      url: '../deliver/deliver?oid=' + e.currentTarget.dataset.oid,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

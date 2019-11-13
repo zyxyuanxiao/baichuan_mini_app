@@ -39,7 +39,6 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: function (res) {
-        console.log("修改订单", res)
         if (res.data.code == 1) {
           wx.switchTab({
             url: '../person/index',
