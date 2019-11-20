@@ -26,16 +26,20 @@
   <view class="baojia-box">
     <view class="title">回收报价</view>
     <view class="comments">{{comments}}</view>
-    <view class="baojia" wx:for="{{baojiaList}}" wx:key="{{item.id}}">
-      <view class="money">{{item.sta_name}} <text class="price--text">{{item.price}}</text> </view>
-      <view class='input-box'>
-        <view class="biaozhun-text">报价标准</view>
-        <radio-group bindchange="checkboxChange" name="baojia_id">
-          <label class="checkbox">
-            <radio value='{{item.id}}' bindtap='radio' data-id="{{item.id}}" checked="{{item.id==id}}" />
-          </label>
-        </radio-group>
+    <view class="baojia-boxx" wx:for="{{baojiaList}}" wx:key="{{item.id}}">
+      <view class="baojia">
+        <view class="money">{{item.sta_name}}
+          <text class="price--text">{{item.price}}</text> </view>
+        <view class='input-box'>
+          <view class="biaozhun-text" bindtap="wqd" data-oid="{{item.id}}">报价标准</view>
+          <radio-group bindchange="checkboxChange" name="baojia_id">
+            <label class="checkbox">
+              <radio value='{{item.id}}' bindtap='radio' data-id="{{item.id}}" checked="{{item.id==id}}" />
+            </label>
+          </radio-group>
+        </view>
       </view>
+      <view class="stand" style="display:{{item.id==checkboxval?'':'none'}}">{{item.describes}}</view>
     </view>
   </view>
 </view>
@@ -47,3 +51,18 @@
     <button class="go-order" bindtap="go_order">提交订单</button>
   </view>
 </view>
+ 
+ 
+ 
+
+<!-- 遮罩层 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <!-- 弹出层 -->
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <view class="text-box">
+      <text style='font-size:39rpx;font-weight:bold;padding-top:50rpx;'>{{stand}}</text>
+    </view>
+  <view bindtap="ok" class="ok">我知道了</view> 
+</view>
+
+

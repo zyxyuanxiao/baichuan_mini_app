@@ -8,18 +8,20 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showmodel: false, //隐藏弹出框
     attributeList: [],
     attrLsits: [],
     searchModel: [],
     second_id: null,
     filter: '',
-    baojiaList:[]
+    baojiaList: [],
+    stand: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var second_id = options.id;
     var second_name = options.name;
     var comments = options.comments;
@@ -39,7 +41,7 @@ Page({
       method: 'GET',
       dataType: 'json',
       responseType: 'text',
-      success: function (res) {
+      success: function(res) {
         that.setData({
           attributeList: res.data,
           phoneName: second_name,
@@ -48,21 +50,30 @@ Page({
       }
     })
   },
-  goHome:function(){
+  goHome: function() {
     wx.switchTab({
       url: '../welcome/welcome',
     })
   },
- 
-  chooseSx: function (e) {
+
+  chooseSx: function(e) {
     let FiledArr = [];
     // 暂存指针
     let that = this;
     // 解构
-    let { attributeList, searchModel } = this.data
+    let {
+      attributeList,
+      searchModel
+    } = this.data
 
     // 解构
-    let { item, id, attrid, boxindex, detailindex } = e.currentTarget.dataset
+    let {
+      item,
+      id,
+      attrid,
+      boxindex,
+      detailindex
+    } = e.currentTarget.dataset
     f[attrid] = id
 
     // 赋值字段名称
@@ -106,7 +117,10 @@ Page({
   // 请求金额
   queryMoney(e) {
     // 解构
-    let { searchModel, second_id } = this.data
+    let {
+      searchModel,
+      second_id
+    } = this.data
 
     // let filter = searchModel.join('_')
     // console.log(filter)
@@ -114,7 +128,7 @@ Page({
     var that = this;
     var filter = that.data.filter;
 
-    console.log("filter",filter);
+    console.log("filter", filter);
     wx.request({
       url: app.API + "getAssess",
       data: {
@@ -127,7 +141,7 @@ Page({
       method: 'GET',
       dataType: 'json',
       responseType: 'text',
-      success: function (res) {
+      success: function(res) {
         console.log(res);
         that.setData({
           baojiaList: res.data
@@ -135,25 +149,28 @@ Page({
       }
     })
   },
-  radio: function (e) {
+  radio: function(e) {
     var id = e.currentTarget.dataset.id;
-    wx.setStorageSync("assess_id", id)
+    // wx.setStorageSync("assess_id", id)
     this.setData({
       id: id,
+      checkboxval: id
     })
   },
-  go_order: function (e) {
+  go_order: function(e) {
     var currenTime = util.formatTime(new Date());
     console.log("时间", currenTime);
     var user_id = wx.getStorageSync("user_id");
     var second_id = wx.getStorageSync("second_id");
-    var assess_id = wx.getStorageSync("assess_id");   //这里不应该用缓存，后期会改进
-    if (assess_id===""){
+    // var assess_id = wx.getStorageSync("assess_id");   //这里不应该用缓存，后期会改进
+    var assess_id = this.data.id;
+
+    if (assess_id === "") {
       wx.showModal({
         title: "信息提示",
         content: "请选择报价标准再提交"
       })
-    }else{
+    } else {
       wx.request({
         url: app.API + "addOrder",
         data: {
@@ -165,12 +182,12 @@ Page({
         method: 'GET',
         dataType: 'json',
         responseType: 'text',
-        success: function (res) {
+        success: function(res) {
           var order_id = res.data.id;
           console.log("下单返回", res)
           if (res.data.code == 1) {
             wx.redirectTo({
-              url: '../order/order?orderid='+order_id,
+              url: '../order/order?orderid=' + order_id,
             })
           } else {
             wx.showModal({
@@ -180,56 +197,75 @@ Page({
           }
         }
       })
-    } 
+    }
   },
 
+  wqd: function(e) {
+    var oid = e.currentTarget.dataset.oid;
+    var baojialist = new Array;
+    baojialist = this.data.baojiaList;
+    for (var i = 0; i < baojialist.length; i++) {
+      console.log("aaa")
+      if (oid == baojialist[i].id) {
+        this.setData({
+          stand: baojialist[i].describes,
+          showModal:true
+        })
+      }
+    }
+  },
+  ok: function() {
+    this.setData({
+      showModal: false
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    f=[];
+  onShow: function() {
+    f = [];
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

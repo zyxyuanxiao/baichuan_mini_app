@@ -12,7 +12,7 @@ class Util {
     let second = date.getSeconds();
 
 
-    return [year, month, day].map(this.formatNumber).join('/') + ' ' + [hour, minute, second].map(this.formatNumber).join(':');
+    return [year, month, day].map(this.formatNumber).join('-') + ' ' + [hour, minute, second].map(this.formatNumber).join('-');
   };
   static formatNumber(n) {
     n = n.toString();
